@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>複素関数</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+            .margin-large
+            {
+                margin-left: 30px;
+            }
+            .margin-large-blue
+            {
+                margin-left: 30px;
+                color: blue;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .two-columns {
+            display: flex;
+            flex-direction: row;
+            gap: 20px; /* 列間のスペース */
+        }
+        .column {
+            flex: 1; /* 各列が均等に幅を取る */
+        }
+    </style>
+<style>
+.three-columns {
+  display: flex;
+  gap: 10px; /* 列間の余白を設定 */
+}
+.column {
+  flex: 1; /* 各列の幅を均等にする */
+  padding: 10px; /* 内側の余白を設定 */
+}
+</style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 0px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+            ol
+            {
+                margin-left: 30px;
+            }
+            ul
+            {
+                margin-left: 30px;
+            }
+    </style>
+    <style>
+        .thin-line {
+            margin: 0; 
+            margin-left:2em;
+            border: 0;
+            height: 1px;
+            background-color: gray;
+        }
+
+        .thick-line {
+            margin: 0; 
+            margin-left:2em;
+            border: 0;
+            height: 2px;
+            background-color: black;
+        }
+    </style>
+    <style>
+        .blue {
+            color: blue; /* 好きな色に変更してください */
+        }
+    </style>
+    </head>
+    <body>
+        <h1><center>1. 複素平面</center></h1>
+
+<h2>1.1 複素平面</h2>
+
+<h3 style="text-indent: 1em;">複素数の定義</h3>
+<p>
+一般に <strong>複素数</strong> は次の形で表される。
+
+\[
+z=x+iy\
+\]
+
+ここで \(i\) は <strong>虚数単位</strong> (\(i^2=-1\)), \(x, y\) は <strong>実数</strong>
+
+<div class="styleBullet">
+<ul><li>
+・\(x\) を \(z\) の <strong>実部(実数部分)</strong> といい, \(Re(z)\) と記す。
+</li><li>
+・\(y\) を \(z\) の <strong>虚部(虚数部分)</strong> といい, \(Im(z)\) と記す
+</li><li>
+・複素数全体の集合を \(\mathbb{C}\) で表す
+</li></ul></div>
+</p>
+
+<h3 style="text-indent: 1em;">複素数の同値性と四則</h3>
+<p>
+\(z_1 = x_1 + iy_1\), \(z_2 = x_2+iy_2\) とすると、複素数の同値性,四則は以下の様に定義される。
+
+\[
+\begin{align}
+&z_1 = z_2 \Longleftrightarrow x_1 = x_2,\; y_1 = y_2  \tag{1} \\
+\\
+&z_1\pm z_2  =(x_1\pm x_2)+i(y_1\pm y_2)  \tag{2} \\
+\\
+&z_1\cdot z_2 =(x_1x_2 - y_1y_2)+i(x_1y_2+x_2y_1)  \tag{3} \\
+\\
+&\frac{z_2}{z_1}  =\frac{x_1x_2+y_1y_2}{x_1^2+y_1^2}+i\frac{x_1y_2-x_2y_1}{x_1^2+y_1^2}　(z_1 \neq 0)  \tag{4}
+\end{align}
+\]
+
+上の四則の定義により、<strong>複素数全体の集合 \(\mathbb{C}\) は体になる</strong>。(証明は<a href="ComplexFunctions_1_1_1.html">こちら</a>)。
+</p>
+
+<h3 style="text-indent: 1em;">例題1.1</h3>
+<p>
+次の複素数を \(x+iy\) の形に表わせ。
+<div class="styleBullet">
+<ul>
+<li>(1) \((-3+i)(2-5i)\)</li>
+<li>(2) \(\frac{3+i}{1-2i}\) </li>
+<li>(3) \(\frac{i}{1+i}+\frac{1+i}{i}\) </li>
+</ul></div>
+</p><p>
+回答は<a href="ComplexFunctions_1_1_2.html">こちら</a>。
+</p>
+<h3 style="text-indent: 1em;">複素数の絶対値と共役複素数</h3>
+<p>
+\(\sqrt{x^2+y^2}\) を複素数 \(z=x+iy\) の<strong>絶対値</strong>といい、\(|z|\) と記す。
+</p>
+<p>
+\(z = x+iy\) に対して \(\overline{z}=x-iy\) を \(z\) の<strong>共役複素数</strong>という。 
+</p>
+<p>
+絶対値、共役複素数について、次の公式が成り立つ。
+
+\[
+z+\overline{z}=2Re(z),　z-\overline{z}=2iIm(z)  \tag{5}
+\]
+
+\[
+\overline{(\overline{z})}=z,　|z|=|\overline{z}|,　z\overline{z}=|z|^2  \tag{6}
+\]
+
+\[
+\overline{z_1\pm z_2}=\overline{z}_1\pm \overline{z}_2,　\overline{z_1z_2}=\overline{z}_1\overline{z}_2,　\overline{\left(\frac{z_2}{z_1}\right)}=\frac{\overline{z}_2}{\overline{z}_1}　(z_1\neq 0)  \tag{7}
+\]
+
+\[
+|z_1z_2|=|z_1||z_2|,　\left|\frac{z_2}{z_1}\right|=\frac{|z_2|}{|z_1|}　(z_1 \neq 0)  \tag{8}
+\]
+
+\[
+||z_1|-|z_2|| \leq |z_1\pm z_2| \leq |z_1|+|z_2|　(三角不等式)  \tag{9}
+\]
+
+証明は<a href="ComplexFunctions_1_1_3.html">こちら</a>
+</p>
+
+<h3 style="text-indent: 1em;">複素平面</h3>
+<p>
+平面 \(\Pi\) 上に1つの直交座標系を定め, 点\((x,y)\) に複素数 \(z=x+iy\) を対応させて, \(\Pi\) 上の点全体と、複素数全体 \(\mathbb{C}\) との間に 1:1 の対応を与えた場合, この平面 \(\Pi\) を<strong>複素平面</strong>または, <strong>Gauss平面</strong> という。
+</p>
+<p>
+・\(x\) 軸：<strong>実軸</strong><br>
+・\(y\) 軸：<strong>虚軸</strong>
+</p>
+<center><img src="images/ComplexFunctions_1_1.png"></center>
+<p>
+2つの実数の組 \((x,y)\) の集合は, 加法, スカラー倍によって2次元ベクトル空間になる。<br>
+→ <strong>複素数全体の集合 \(\mathbb{C}\) も2次元ベクトル空間</strong>と考えることができる。
+
+\[
+\begin{array}{l c}
+(加法) & (x_1,y_1)+(x_2,y_2)=(x_1+x_2, y_1+y_2) \\
+& \updownarrow \\
+& z_1+z_2 = (x_1+iy_1)+(x_2+iy_2)=(x_1+x_2)+i(y_1+y_2) \\
+\\
+(スカラー倍) & a(x, y) = (ax, ay) \\
+& \updownarrow \\
+& a(x+iy) = (ax) + i(ay)
+\end{array}
+\]
+</p>
+
+<h3 style="text-indent: 1em;">例題1.2</h3>
+<p>
+<div class="styleBullet">
+<ul>
+<li>ⅰ) 複素平面上の直線は、次の形で表されることを示せ。
+\[
+\overline{\alpha}z+\alpha\overline{z}+c = 0　(\alpha\neq 0, cは実数)
+\]
+</li>
+<li>ⅱ) 複素平面上の円は、次の形で表されることを示せ。
+
+\[
+kz\overline{z}+\overline{\alpha}z+\alpha\overline{z}+c=0　(k\neq 0 および c は実数,\alpha\overline{\alpha}\gt kc)
+\]
+</li>
+<li>ⅲ) 楕円 \(\frac{x^2}{a^2}+\frac{y^2}{b^2}=1　(a\gt b\gt 0)\) を \(z,\overline{z}\) を用いて表せ。
+</li>
+</ul></div>
+</p><p>
+回答は<a href="ComplexFunctions_1_1_4.html">こちら</a>
+</p>
+
+<h3 style="text-indent: 1em;">例題1.3</h3>
+<p>
+<div class="styleBullet">
+<ul>
+<li>ⅰ) 複素平面上の 3 点 \(z_1,z_2,z_3\) を頂点とする三角形 \(\triangle z_1z_2z_3\) の重心を表す点は \(\frac{1}{3}(z_1+z_2+z_3)\) であることを示せ。
+</li>
+<br>
+<li>ⅱ) \(|z_1-z_2|^2+|z_1+z_2|^2=2(|z_1|^2+|z_2|^2)\) を証明せよ。(三角形の中線定理)
+</li>
+<br>
+<li>ⅲ) \(z=x+iy　(y\neq 0)\) のとき, \(z^3\) が実数となるための条件を求めよ。
+</li>
+</ul></div>
+</p><p>
+回答は<a href="ComplexFunctions_1_1_7.html">こちら</a>。
+</p>
+
+<h3 style="text-indent: 1em;">極形式</h3>
+<p>
+平面上の点 \((x,y)\) を表すのに極座標を使って
+
+\[
+\begin{align}
+x &= r\cos(\theta) \\
+y &= r\sin(\theta)
+\end{align}
+\]
+
+と表すことができる。複素数も同様に
+
+\[
+z=r(\cos(\theta)+i\sin(\theta))
+\]
+
+と表すことができる。これを \(z\) の<strong>極形式</strong>という。<br>
+<br>
+・\(r=|z|\geq 0\) <br>
+・\(\theta\) を \(z\) の<strong>偏角</strong>といい, \(arg\; z\) で表す。<br>
+・\(r=0\) の場合, \(arg\;z\) は定義しない。<br>
+・\(r\gt 0\) のとき、\((r,\theta+2n\pi)\;(n=0,\pm1,\pm2,...)\) は同一の \(z\) に対応する。<br>
+・\(z\) の偏角のうち, \(-\pi\lt arg\;z\leq \pi\) を満足するものを偏角の<strong>主値</strong>といい, \(Arg\;z\) と記す。<br>
+<br>
+</p>
+<p>
+極形式については、次の公式が成り立つ。
+\(z_1=r_1(\cos(\theta_1)+i\sin(\theta_1)), z_2=r_2(\cos(\theta_2)+i\sin(\theta_2))\) のとき
+
+\[
+\begin{align}
+z_1z_2 &= r_1r_2\{\cos(\theta_1+\theta_2)+i\sin(\theta_1+\theta_2)\}  \tag{12} \\
+\\
+\frac{z_2}{z_1} &= \frac{r_2}{r_1}\{\cos(\theta_2-\theta_1)+i\sin(\theta_2-\theta_1)\}\;(z_1\neq 0)  \tag{13}
+\end{align}
+\]
+
+証明は<a href="ComplexFunctions_1_1_8.html">こちら</a>。<br>
+<br>
+公式(12)を繰り返し使えば, <strong>de Moivreの定理</strong>と呼ばれる次の公式が得られる。
+
+\[
+z=r\{\cos(\theta)+i\sin(\theta)\} \Rightarrow z^n=r^n\{\cos(n\theta)+i\sin(n\theta)\}\;(n:整数)  \tag{14}
+\]
+
+</p>
+
+<h3 style="text-indent: 1em;">例題1.4</h3>
+<p>
+・\(z^n=a\;(a\neq 0)\) を解け。ただし \(n\) は正の整数とする。<br>
+<br>
+・1 の \(n\) 乗根を求め, 複素平面上に図示せよ。<br>
+<br>
+回答は<a href="ComplexFunctions_1_1_9.html">こちら</a>。
+</p>
+
+<h3 style="text-indent: 1em;">例題1.5</h3>
+<p>
+\(\theta\) が \(2\pi\) の整数倍でないとき, 次の等式を証明せよ。
+
+\[
+\begin{align}
+&1+\cos(\theta)+\cos(2\theta)+\cdots+\cos(n\theta) = \cos\left(\frac{n\theta}{2}\right)\sin\left(\frac{(n+1)\theta}{2}\right)\Big/\sin\left(\frac{\theta}{2}\right) \\
+\\
+&\sin(\theta)+\sin(2\theta)+\cdots+\sin(n\theta)=\sin\left(\frac{n\theta}{2}\right)\sin\left(\frac{(n+1)\theta}{2}\right)\Big/\sin\left(\frac{\theta}{2}\right)
+\end{align}
+\]
+
+証明は<a href="ComplexFunctions_1_1_10.html">こちら</a>。
+</p>
+
+<h3 style="text-indent: 1em;">直線の長さと 2 直線のなす角</h3>
+<p>
+2点 \(z_1,z_2\) が与えられたとき<br>
+・\(z_1\)を始点, \(z_2\) を終点とするベクトルは複素数 \(z_2-z_1\) によって表される。<br>
+・その長さは \(|z_2-z_1|\) で表される
+</p>
+<center><img src="images/ComplexFunctions_1_1_2.png"></center>
+<p>
+3点 \(z_1,z_2,z_3\) が与えられたとき<br>
+・2つのベクトル \(z_2-z_1\) と \(z_3-z_1\) のなす角は<br>
+　\(\angle z_2z_1z_3 = \left|Arg\left(\frac{z_3-z_1}{z_2-z_1}\right)\right|\)
+</p>
+<center><img src="images/ComplexFunctions_1_1_3.png"></center>
+
+<h3 style="text-indent: 1em;">例題1.6</h3>
+<p>
+・\(z_1,z_2,z_3\) が正三角形をなす条件は
+
+\[
+z_1^2+z_2^2+z_3^2-z_2z_3-z_3z_1-z_1z_2=0
+\]
+
+　であることを証明せよ。<br>
+<br>
+・\(z_1\cdot z_2,　\frac{z_2}{z_1}\; (z_1\neq 0)\) を複素平面上で作図せよ。<br>
+<br>
+証明は<a href="ComplexFunctions_1_1_11.html">こちら</a>。<br>
+<br>
+</p>
+
+<h3 style="text-indent: 1em;">複素平面 \(\mathbb{C}\) における点集合の性質</h3>
+<p>
+　※集合に何らかの数学的構造 (四則, スカラー倍, 絶対値, 距離など)を加味した場合<br>
+　　集合　　　　\(\Rightarrow\) 空間と呼ばれる<br>
+　　集合の要素　\(\Rightarrow\) 点とよばれる<br>
+<br>
+・複素数には絶対値が定義されている (ノルム空間)<br>
+・2点の複素数の差も複素数になる (複素数は体)<br>
+・2点の複素数の差も絶対値を持つ (距離空間)<br>
+\(\Rightarrow\) 点と点の距離に関連した性質を論ずることができる。<br>
+
+</p>
+
+<h4 style="text-indent: 2em;">距離</h4>
+<p>
+<div class="styleBullet">
+<ul>
+<li>
+・複素平面上の2点 \(z_1=x_1+iy_1, z_2=x_2+iy_2\) に対し,<br>
+\(|z_1-z_2|=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}\) が \(z_1,z_2\) の<strong>距離</strong>である。
+</li>
+</ul></div>
+</p>
+
+<h4 style="text-indent: 2em;">有界</h4>
+<p>
+<div class="styleBullet">
+<ul>
+<li>
+・集合 \(D\) の任意の点 \(z\) に対し, \(|z|\leq K\) である定数 \(K\) が存在するとき, 集合 \(D\) は<strong>有界</strong>であるという。
+
+</li>
+</ul></div>
+</p>
+
+<h4 style="text-indent: 2em;">近傍・内点・外点・境界点</h4>
+<p>
+<div class="styleBullet">
+<ul>
+<li>
+・点 \(z_0\) を中心とした半径 \(\varepsilon \gt 0\) の円の内部, すなわち集合 \(U_\varepsilon(z_0)=\{z\mid |z-z_0|\lt \varepsilon\}\) を \(z_0\) の <strong>ε近傍</strong> という。いろいろなεに対する \(z_0\) のε近傍を総称して \(z_0\) の<strong>近傍</strong>という。
+
+</li><br><li>
+・集合 \(D\) に属する点 \(z_0\) が \(D\) に含まれる \(z_0\) のある近傍をもつとき, \(z_0\) を \(D\) の <strong>内点</strong> という。
+
+</li><br><li>
+・点 \(z_1\) のある近傍が \(D\) の点を1つも含まないとき, \(z_1\) を \(D\) の <strong>外点</strong> という。
+
+</li><br><li>
+・\(D\) の内点でも外点でもない点, すなわち, \(z_2\) のどんな近傍も \(D\) に属する点と属さない点が存在するとき, \(z_2\) を \(D\) の <strong>境界点</strong> といい, \(D\) の境界点全体を \(D\) の<strong>境界</strong> という。
+</li>
+</ul></div>
+<center><img src="images/ComplexFunctions_1_1_4.png"></center>
+</p>
+
+<h4 style="text-indent: 2em;">集積点・孤立点</h4>
+<p>
+<div class="styleBullet">
+<ul>
+<li>
+・点 \(z_0\) のどんな近傍にも \(D\) の点が無数に含まれているとき, \(z_0\) を \(D\) の <strong>集積点</strong> という。<br>
+<br>
+(???)<br>
+・この定義だと内点も集積点になってしまうのでは? <br>
+(???おわり)
+</li></br><li>
+・\(D\) の点で \(D\) の集積点でないもの, すなわち, \(D\) の点 \(z_1\) で, \(z_1\) のある近傍が \(z_1\) 以外に \(D\) の点を含まないとき, \(z_1\) を \(D\) の <strong>孤立点</strong> という。
+</li>
+</ul></div>
+</p>
+
+<h4 style="text-indent: 2em;">開集合・閉集合</h4>
+<p>
+<div class="styleBullet">
+<ul>
+<li>
+・内点のみからなる集合を <strong>開集合</strong> という。
+</li></br><li>
+・ある集合がその集積点をすべて含んでいるとき, その集合を <strong>閉集合</strong> という。
+</li></br><li>
+・問<br>
+　ある集合に属さない点全体の集合をその集合の補集合という。開集合の補集合は閉集合であり、閉集合の補集合は開集合であることを示せ。<br>
+<br>
+回答は<a href="ComplexFunctions_1_1_12.html">こちら</a>。
+</li>
+</ul></div>
+</p>
+
+<h4 style="text-indent: 2em;">連結・閉領域</h4>
+<p>
+<div class="styleBullet">
+<ul>
+<li>
+・集合 \(D\) に属する任意の2点を \(D\) 内の連続曲線で結べるとき, \(D\) は  <strong>連結</strong> であるといい, 連結な開集合を <strong>領域</strong> という。
+
+</li></br><li>
+・領域にその境界点をつけ加えてえられる集合を <strong>閉領域</strong> という。
+
+</li>
+</ul></div>
+</p>
+
+<h4 style="text-indent: 2em;">例題 1.7</h4>
+<p>
+・\(\{z\mid 0\lt |z|\lt 1\}\) は領域である。<br>
+<br>
+　境界を含まないので開集合<br>
+　任意の2点を原点を通らないようにして集合内の点で結ぶことができるので連結<br>
+　たとえば<br>
+　 - 大きさ：\(|z_1|\rightarrow |z_2|\)<br>
+　 - 偏角：\(Arg(z_1)\rightarrow Arg(z_2)\)<br>
+　を補間して結ぶことができる。
+</p>
+<center><img src="images/ComplexFunctions_1_1_5.png"></center>
+
+<p>
+・\(\{z\mid 1\lt Re(z)\}\) は領域である。<br>
+<br>
+　境界を含まないので開集合<br>
+　任意の2点は集合内の点で直線で結ぶことができるので連結
+</p>
+<center><img src="images/ComplexFunctions_1_1_6.png"></center>
+
+<p>
+・\(\{z\mid |z|\leq 1\}\) は閉領域である。<br>
+<br>
+　境界を含むので閉集合<br>
+　任意の2点は集合内の点で直線で結ぶことができるので連結
+</p>
+<center><img src="images/ComplexFunctions_1_1_7.png"></center>
+
+<p>
+・\(\{z\mid |Im(z)|\leq 1\}\) は閉領域である。<br>
+<br>
+　境界を含むので閉集合<br>
+　任意の2点は集合内の点で直線で結ぶことができるので連結
+</p>
+<center><img src="images/ComplexFunctions_1_1_8.png"></center>
+
+<p>
+・\(\{z\mid 1\lt |Re(z)|\}\) は開集合であるが, 領域ではない。<br>
+<br>
+　境界を含まないので開集合<br>
+　任意の2点は集合内の点で結ぶことができない場合があるので連結ではない
+</p>
+<center><img src="images/ComplexFunctions_1_1_9.png"></center>
+
+<h4 style="text-indent: 2em;">例題 1.8</h4>
+<p>
+・複素平面から負の実軸および原点を除いてできる領域<br>
+　\(\{z\mid z+|z|\neq 0\}\) と表すことができる。
+</p>
+<center><img src=""></center>
+    </body>
+</html>

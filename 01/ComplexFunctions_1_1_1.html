@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>複素関数</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+            .margin-large
+            {
+                margin-left: 30px;
+            }
+            .margin-large-blue
+            {
+                margin-left: 30px;
+                color: blue;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .two-columns {
+            display: flex;
+            flex-direction: row;
+            gap: 20px; /* 列間のスペース */
+        }
+        .column {
+            flex: 1; /* 各列が均等に幅を取る */
+        }
+    </style>
+<style>
+.three-columns {
+  display: flex;
+  gap: 10px; /* 列間の余白を設定 */
+}
+.column {
+  flex: 1; /* 各列の幅を均等にする */
+  padding: 10px; /* 内側の余白を設定 */
+}
+</style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 0px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+            ol
+            {
+                margin-left: 30px;
+            }
+            ul
+            {
+                margin-left: 30px;
+            }
+    </style>
+    <style>
+        .thin-line {
+            margin: 0; 
+            margin-left:2em;
+            border: 0;
+            height: 1px;
+            background-color: gray;
+        }
+
+        .thick-line {
+            margin: 0; 
+            margin-left:2em;
+            border: 0;
+            height: 2px;
+            background-color: black;
+        }
+    </style>
+    <style>
+        .blue {
+            color: blue; /* 好きな色に変更してください */
+        }
+    </style>
+    </head>
+    <body>
+        <h1><center>1.1 複素平面</center></h1>
+
+<h3>複素数が体であることの証明</h3>
+<p>
+実数が体であることと、複素数の四則の定義から、複素数全体の集合 \(\mathbb{C}\) が体になることを確認する。具体的には以下の[1]～[10]が成り立つことを確認する。
+
+\[
+\begin{array}{r l l}
+[1] & 和の交換律 & z_1+z_2 = z_2+z_1 \\
+[2] & 和の結合律 & z_1+(z_2+z_3)=(z_1+z_2)+z_3 \\ 
+[3] & 和に関する単位元 (0) の存在 & すべての z\in\mathbb{C} に対してz+0=z を満たす 0 が存在する \\
+[4] & 和に関する逆元 (-z) の存在 & z+(-z)=0 となる -z が存在する \\
+[5] & 積の交換律 & z_1 \cdot z_2 = z_2 \cdot z_1 \\
+[6] & 積の結合律 & z_1 \cdot (z_2 \cdot z_3)＝(z_1 \cdot z_2)\cdot z_3 \\
+[7] & 分配律 & z_1 \cdot (z_2 + z_3) = z_1 \cdot z_2 + z_1 \cdot z_3 \\
+[8] & 積に関する単位元 (1) の存在 & z \cdot 1 = z となる 1 が存在する \\
+[9] & 積に関する逆元 (z^{-1}) の存在 & z \cdot z^{-1} = 1となる z^{-1}が存在する \\
+[10] & 0 以外の元の存在 & 1\neq 0\ 
+\end{array}
+\]
+
+</p>
+
+<h3>[1] 和の交換律</h3>
+<p>
+　\(z_1+z_2 = z_2+z_1\) を示す。<br>
+　<br>
+　・\(z_1 = x_1 + iy_1\) <br>
+　・\(z_2 = x_2 + iy_2\) <br>
+　とおく。<br>
+  <br>
+　和の公式(2)より<br>
+　\(z_1+z_2 = (x_1+x_2)+i(y_1+y_2)\)<br>
+　\(z_2+z_1 = (x_2+x_1)+i(y_2+y_1)\)<br>
+　実部、虚部はそれぞれ実数なので、実数の和の交換律より<br>
+　\((x_1+x_2) = (x_2+x_1)\) <br>
+　\((y_1+y_2) = (y_2+y_1)\) <br>
+　<br>
+　実部、虚部が等しいので複素数の同値性(1)より<br>
+　\(z_1+z_2 = z_2+z_1\)
+</p>
+
+<h3>[2] 和の結合律</h3>
+<p>
+　\(z_1+(z_2+z_3)=(z_1+z_2)+z_3\) を示す。<br>
+　<br>
+　・\(z_1 = x_1 + iy_1\) <br>
+　・\(z_2 = x_2 + iy_2\) <br>
+　・\(z_3 = x_3 + iy_3\) <br>
+　とおく。<br>
+  <br>
+　和の公式(2)より<br>
+　\((z_2 + z_3) = (x_2+x_3)+i(y_2+y_3)\) <br>
+　\(z_1+(z_2+z_3)=(x_1+(x_2+x_3))+i(y_1+(y_2+y_3))\) <br>
+  <br>
+　\((z_1 + z_2) = (x_1+x_2)+i(y_1+y_2)\) <br>
+　\((z_1+z_2)+z_3=((x_1+x_2)+x_3))+i((y_1+y_2)+y_3)\) <br>
+  <br>
+　実部、虚部はそれぞれ実数なので、実数の和の結合律より<br>
+　\(x_1+(x_2+x_3) = (x_1+x_2)+x_3\) <br>
+　\(y_1+(y_2+y_3) = (y_1+y_2)+y_3\) <br>
+　<br>
+　実部、虚部が等しいので複素数の同値性(1)より<br>
+　\(z_1+(z_2+z_3)=(z_1+z_2)+z_3\)
+</p>
+
+<h3>[3] 和に関する単位元 (0) の存在</h3>
+<p>
+　すべての \(z\in\mathbb{C}\) に対して \(z+0=z\) を満たす \(0\) が存在することを示す。<br>
+　<br>
+　・\(\forall z=x+iy \in \mathbb{C}\)<br>
+　・\(0 = 0 +i0\)<br>
+　　(実数が体であることを前提としているので 実部, 虚部に割り当てる \(0\) は存在する)<br>
+　とおく<br>
+　<br>
+　和の公式(2)より<br>
+　\(z+0 = (x+0) + i(y+0)\)
+  <br>
+　実部、虚部はそれぞれ実数なので、実数の和に関する単位元の存在より<br>
+　\(x+0=x,\; y+0=y\)<br>
+　<br>
+　実部、虚部が等しいので複素数の同値性(1)より<br>
+　\(z+0 = z\) となり和に関する単位元が存在することが示された。
+</p>
+
+<h3>[4] 和に関する逆元 (\(-z\)) の存在</h3>
+<p>
+　\(z+(-z)=0\) となる \(-z\) が存在することを示す。<br>
+　<br>
+　・\(\forall z=x+iy \in \mathbb{C}\)<br>
+　　に対して \(-z = -x +i(-y)\)<br>
+　　(実数が体であることを前提としている。\(x,y\) は実数なので \(-x,-y\) は存在する)<br>
+　・\(0 = 0 +i0\)<br>
+　とおく<br>
+　<br>
+　和の公式(2)より<br>
+　\(z+(-z)=(x+(-x))+i(y+(-y))\)
+  <br>
+　実部、虚部はそれぞれ実数なので、実数の和に関する逆元の存在より<br>
+　\(x+(-x)=0,\; y+(-y)=0\)<br>
+　<br>
+　実部、虚部が等しいので複素数の同値性(1)より<br>
+　\(z+(-z)=0\) となり和に関する逆元が存在することが示された。
+<p>
+
+<h3>[5] 積の交換律</h3>
+<p>
+　\(z_1 \cdot z_2 = z_2 \cdot z_1\) を示す。<br>
+　<br>
+　・\(z_1 = x_1 + iy_1\) <br>
+　・\(z_2 = x_2 + iy_2\) <br>
+　とおく。<br>
+  <br>
+　積の公式(3)より<br>
+　\(z_1 \cdot z_2 = (x_1x_2-y_1y_2) + i(x_1y_2+x_2y_1)\)<br>
+　\(z_2 \cdot z_1 = (x_2x_1-y_2y_1) + i(x_2y_1+x_1y_2)\)<br>
+　<br>
+　実部、虚部はそれぞれ実数なので、実数の積の交換律, 和の交換律より<br>
+　\((x_1x_2 - y_1y_2) = (x_2x_1 - y_2y_1)\)　　← 積の交換律<br>
+　\((x_1y_2 + x_2y_1) = (x_2y_1 + x_1y_2)\)　　← 和の交換律<br>
+　<br>
+　実部、虚部が等しいので複素数の同値性(1)より<br>
+　\(z_1 \cdot z_2 = z_2 \cdot z_1\) となり積の交換律が示された。
+<p>
+
+<h3>[6] 積の結合律</h3>
+<p>
+　\(z_1 \cdot (z_2 \cdot z_3)＝(z_1 \cdot z_2)\cdot z_3\) を示す。<br>
+　<br>
+　・\(z_1 = x_1 + iy_1\) <br>
+　・\(z_2 = x_2 + iy_2\) <br>
+　・\(z_3 = x_3 + iy_3\) <br>
+　とおく。<br>
+  <br>
+　積の公式(3)より<br>
+　\(z_2 \cdot z_3 = (x_2x_3- y_2y_3) + i(x_2y_3 + x_3y_2)\) <br>
+　\(z_1 \cdot (z_2 \cdot z_3) = (x_1(x_2x_3 - y_2y_3)-y_1(x_2y_3 + x_3y_2)+i(x_1(x_2y_3 + x_3y_2)+(x_2x_3- y_2y_3)y_1)\)<br>
+　\(=(x_1x_2x_3-x_1y_2y_3-y_1x_2y_3-y_1y_2x_3)+i(x_1x_2y_3+x_1y_2x_3+y_1x_2x_3-y_1y_2y_3)\)<br>
+　<br>
+　\(z_1 \cdot z_2 = (x_1x_2-y_1y_2) + i(x_1y_2+x_2y_1)\)<br>
+　\((z_1 \cdot z_2) \cdot z_3 = ((x_1x_2-y_1y_2)x_3-(x_1y_2+x_2y_1)y_3)+i((x_1x_2-y_1y_2)y_3+x_3(x_1y_2+x_2y_1))\)<br>
+　\(=(x_1x_2x_3-y_1y_2x_3-x_1y_2y_3-y_1x_2y_3)+i(x_1x_2y_3-y_1y_2y_3+x_1y_2x_3+y_1x_2x_3)\)<br>
+　<br>
+　実部、虚部はそれぞれ実数なので、実数の積の交換律, 和の交換律より<br>
+　\((x_1x_2x_3-x_1y_2y_3-y_1x_2y_3-y_1y_2x_3) = (x_1x_2x_3-y_1y_2x_3-x_1y_2y_3-y_1x_2y_3)\)<br>
+　\((x_1x_2y_3+x_1y_2x_3+y_1x_2x_3-y_1y_2y_3)=(x_1x_2y_3-y_1y_2y_3+x_1y_2x_3+y_1x_2x_3)\)<br>
+　<br>
+　実部、虚部が等しいので複素数の同値性(1)より<br>
+　\(z_1 \cdot (z_2 \cdot z_3) = (z_1 \cdot z_2) \cdot z_3\) となり積の結合律が示された。
+<p>
+　
+<h3>[7] 分配律</h3>
+<p>
+　\(z_1 \cdot (z_2 + z_3) = z_1 \cdot z_2 + z_1 \cdot z_3\) を示す。
+　<br>
+　・\(z_1 = x_1 + iy_1\) <br>
+　・\(z_2 = x_2 + iy_2\) <br>
+　・\(z_3 = x_3 + iy_3\) <br>
+　とおく。<br>
+  <br>
+　和の公式(2)より<br>
+　\(z_2+z_3=(x_2+x_3)+i(y_2+y_3)\)<br>
+　積の公式(3)より<br>
+　\(z_1 \cdot (z_2 + z_3)=(x_1(x_2+x_3)-y_1(y_2+y_3))+i(x_1(y_2+y_3)+y_1(x_2+x_3)\)<br>
+　実数の分配律より<br>
+　\(=(x_1x_2+x_1x_3-y_1y_2-y_1y_3)+i(x_1y_2+x_1y_3+y_1x_2+y_1x_3)\)<br>
+　\(=(x_1x_2-y_1y_2) +i(x_1y_2+y_1x_2)+(x_1x_3-y_1y_3) + i(x_1y_3+y_1x_2)\)<br>
+　\(=z_1\cdot z_2+z_1\cdot z_3\) が示された。<br>
+
+<p>
+
+<h3>[8] 積に関する単位元 (1) の存在</h3>
+<p>
+　\(z \cdot 1 = z\) となる 1 が存在することを示す。<br>
+　<br>
+　・\(\forall z=x+iy \in \mathbb{C}\)に対して<br>
+　・\(1 = 1 +i0\)<br>
+　　(実数が体であることを前提としているので 実部, 虚部に割り当てる \(1,0\) は存在する)<br>
+　とおく<br>
+　<br>
+　積の公式(3)より<br>
+　\(z\cdot 1 = (x\cdot 1-y\cdot 0)+i(x\cdot 0 + y\cdot 1)\)<br>
+　\(=x + iy=z\)<br>
+　<br>
+　積に関する単位元が存在することが示された。
+<p>
+
+<h3>[9] 積に関する逆元 (\(z^{-1}\)) の存在</h3>
+<p>
+　\(z \cdot z^{-1} = 1\) となる \(z^{-1}\) が存在することを示す。<br>
+　<br>
+　・\(\forall z=x+iy\in\mathbb{C}\) ただし \(z\neq 0\)<br>
+　　に対して \(z^{-1}=\left(\frac{x}{x^2+y^2}\right)+i\left(-\frac{y}{x^2+y^2}\right)\)<br>
+　とおく<br>
+　<br>
+　\(z\cdot z^{-1} = \left(x\frac{x}{x^2+y^2}-y\left(-\frac{y}{x^2+y^2}\right)\right)+i\left(x\left(-\frac{y}{x^2+y^2}\right)+y\frac{x}{x^2+y^2}\right)\)<br>
+　\(=\left(\frac{x^2}{x^2+y^2}+\frac{y^2}{x^2+y^2}\right)+i\left(\frac{-xy}{x^2+y^2}+\frac{yx}{x^2+y^2}\right)=1+i0=1\)<br>
+　<br>
+　\(z \cdot z^{-1} = 1\) となる \(z^{-1}\) が存在することが示された。
+
+<p>
+
+<h3>[10] \(0\) 以外の元の存在</h3>
+<p>
+　・\(1=1+i0\)<br>
+　・\(0=0+i0\)<br>
+　とおく、実部が異なるので、複素数の同値性(1)より \(1+i0 \neq 0+i0\)<br>
+　\(0\) 以外の元が存在することが示された。
+<p>
+
+<h3></h3>
+<p><p>
+
+    </body>
+</html>
