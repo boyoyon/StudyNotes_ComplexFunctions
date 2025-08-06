@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>複素関数</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+            .margin-large
+            {
+                margin-left: 30px;
+            }
+            .margin-large-blue
+            {
+                margin-left: 30px;
+                color: blue;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .two-columns {
+            display: flex;
+            flex-direction: row;
+            gap: 20px; /* 列間のスペース */
+        }
+        .column {
+            flex: 1; /* 各列が均等に幅を取る */
+        }
+    </style>
+<style>
+.three-columns {
+  display: flex;
+  gap: 10px; /* 列間の余白を設定 */
+}
+.column {
+  flex: 1; /* 各列の幅を均等にする */
+  padding: 10px; /* 内側の余白を設定 */
+}
+</style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 0px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+            ol
+            {
+                margin-left: 30px;
+            }
+            ul
+            {
+                margin-left: 30px;
+            }
+    </style>
+    <style>
+        .thin-line {
+            margin: 0; 
+            margin-left:2em;
+            border: 0;
+            height: 1px;
+            background-color: gray;
+        }
+
+        .thick-line {
+            margin: 0; 
+            margin-left:2em;
+            border: 0;
+            height: 2px;
+            background-color: black;
+        }
+    </style>
+    <style>
+        .blue {
+            color: blue; /* 好きな色に変更してください */
+        }
+    </style>
+    </head>
+    <body>
+        <h1><center>1.2 無限遠点</center></h1>
+<p>
+\(SN\) を \(z\) 軸にとり, \(P\) の座標を \((\xi,\eta,\zeta)\) とすると
+
+\[
+\xi^2+\eta^2+\zeta^2-\zeta=0,　\frac{x}{\xi}=\frac{y}{\eta}=\frac{1}{1-\zeta}
+\]
+
+となることを示す。
+</p>
+(式の導出)
+<p>
+●中心が \((0,0,\frac{1}{2})\), 半径が \(\frac{1}{2}\) の球の表面
+
+\[
+X^2+Y^2+\left(Z-\frac{1}{2}\right)^2=\left(\frac{1}{2}\right)^2
+\]
+ 
+　※点 \((0,0,\frac{1}{2})\) と 点 \((X,Y,Z)\) の距離 \(=\frac{1}{2}\) になるという条件を満たす点の集まり。<br>
+<br>
+点 \(P\) は球面上の点なので、上式の \(X,Y,Z\) に \(\xi,\eta,\zeta\) を代入しても等式が成り立つ。
+
+\[
+\begin{align}
+\xi^2+\eta^2+\left(\zeta-\frac{1}{2}\right)^2 &= \left(\frac{1}{2}\right)^2 \\
+\\
+\xi^2+\eta^2+\zeta^2-\zeta+\cancel{\frac{1}{4}}&=\cancel{\frac{1}{4}} \\
+\\
+\xi^2+\eta^2+\zeta^2-\zeta &= 0
+\end{align}
+\]
+
+●線分 \(\overline{NP}\) を延長した先に \(z\) があるので, \(k\overrightarrow{NP}=\overrightarrow{Nz}\) となる。<br>
+<br>
+　・点 \(N\): \((0,0,1)\)<br>
+　・点 \(P\): \((\xi,\eta,\zeta)\)<br>
+　・点 \(z\): \((x,y,0)\) ･･･ 点\(z\) の z 座標は 0 であることに注意。
+
+\[
+\begin{align}
+&k(\xi-0, \eta-0,\zeta-1) = (x-0, y-0, 0-1) \\
+\\
+&k\xi=x,　　k\eta=y,　　k(\zeta-1)=0-1 \\
+\\
+&k=\frac{x}{\xi}=\frac{y}{\eta}=\frac{-1}{\zeta-1}=\frac{1}{1-\zeta}
+\end{align}
+\]
+
+    </body>
+</html>
