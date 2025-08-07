@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>複素関数</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+            .margin-large
+            {
+                margin-left: 30px;
+            }
+            .margin-large-blue
+            {
+                margin-left: 30px;
+                color: blue;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .two-columns {
+            display: flex;
+            flex-direction: row;
+            gap: 20px; /* 列間のスペース */
+        }
+        .column {
+            flex: 1; /* 各列が均等に幅を取る */
+        }
+    </style>
+<style>
+.three-columns {
+  display: flex;
+  gap: 10px; /* 列間の余白を設定 */
+}
+.column {
+  flex: 1; /* 各列の幅を均等にする */
+  padding: 10px; /* 内側の余白を設定 */
+}
+</style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 0px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+            ol
+            {
+                margin-left: 30px;
+            }
+            ul
+            {
+                margin-left: 30px;
+            }
+    </style>
+    <style>
+        .thin-line {
+            margin: 0; 
+            margin-left:2em;
+            border: 0;
+            height: 1px;
+            background-color: gray;
+        }
+
+        .thick-line {
+            margin: 0; 
+            margin-left:2em;
+            border: 0;
+            height: 2px;
+            background-color: black;
+        }
+    </style>
+    <style>
+        .blue {
+            color: blue; /* 好きな色に変更してください */
+        }
+    </style>
+    </head>
+    <body>
+        <h1><center>1.2 無限遠点</center></h1>
+<h2>例題 1.10</h2>
+<p>
+立体射影により \(\mathbb{C}\) 上の円または直線は, \(\mathbb{K}\) 上の円に対応することを示せ。(円円対応)<br>
+<br>
+※ 直線は半径 \(\infty\) の円と見なしてこの事実を円円対応という。<br>
+</p>
+(解答)
+
+<h3 style="text-indent: 1em;">複素平面 \(\mathbb{C}\) 上の円または直線の射影</h3>
+<p>
+
+\(\mathbb{C}\) 上の円または直線の方程式は<br>
+\(a(x^2+y^2)+2bx+2cy+d=0\; (a,b,c,d は実数で, b^2+c^2-ad\geq 0)\)<br>
+<br>
+　・<a href="ComplexFunctions_1_1_5.html">例題1.2 解答の補足①</a>より(係数の記号が異なるので読み替える), 直線の方程式は上式で<br>
+　　\(a=0 \Rightarrow 2bx+2cy+d=0\)<br>
+<br>
+　・<a href="ComplexFunctions_1_1_6.html">例題1.2 解答の補足②</a>より(係数の記号が異なるので読み替える),円の方程式は上式になり,<br>
+　　半径が正になる条件は \(b^2+c^2-ad \gt 0\)。<br>
+<br>
+これに公式 (1) を代入すると
+
+\[
+a\left(\left(\frac{\xi}{1-\zeta}\right)^2+\left(\frac{\eta}{1-\zeta}\right)^2\right)+2b\frac{\xi}{1-\zeta}+2c\frac{\eta}{1-\zeta}+d=0 
+\]
+
+両辺に \((1-\zeta)^2\) を掛けて
+
+\[
+a(\xi^2+\eta^2)+2b(1-\zeta)\xi+2c(1-\zeta)\eta+(1-\zeta)^2d=0 
+\]
+
+<br>
+公式(1)の \(\xi^2+\eta^2+\zeta^2=\zeta\) より \(\xi^2+\eta^2 = \zeta - \zeta^2=\zeta(1-\zeta)\)
+
+\[
+\begin{align}
+&a\zeta\cancel{(1-\zeta)}+2b\cancel{(1-\zeta)}\xi+2c\cancel{(1-\zeta)}\eta+(1-\zeta)^{\cancel{2}}d=0 \\
+\\
+&a\zeta+2b\xi+2c\eta+(1-\zeta)d=0 \\
+\\
+&(a-d)\zeta+2b\xi+2c\eta+d=0
+\end{align}
+\]
+
+<br>
+\(\zeta, \xi,\eta\) の係数 \(a-d, 2b, 2c\) が同時に 0 になる場合, 条件 \(b^2+c^2-ad\gt 0\) を満たさない。<br>
+\((a-d=0, b=0,c=0\) なら \(b^2+c^2-ad=-a^2 \cancel{\gt} 0)\)。<br>
+したがって, \(a-d, b, c\) のいずれかは 0 ではない。<br>
+<br>
+　・二次元の場合, 法線ベクトル \((\alpha,\beta)\) と点\((x,y)\) の内積が一定になる点の集合は直線だった。<br>
+　　\((\alpha, \beta)\cdot (x,y)=\alpha\cdot x+\beta\cdot y = \gamma\)<br>
+<br>
+　・三次元の場合, 法線ベクトル \((\alpha,\beta,\gamma)\) と点 \((x,y,z)\) の内積が一定になる点の集合は平面をあらわす。<br>
+　　\((\alpha,\beta,\gamma)\cdot(x,y,z)=\alpha\cdot x+\beta\cdot y+\gamma\cdot z = \delta \)<br>
+<br>
+\((a-d)\zeta+2b\xi+2c\eta+d=0\) は平面上の点になる。<br>
+ところで \((\xi,\eta,\zeta)\) はリーマン球面上の点でもあるので、平面と球面の交線(円)になる。
+</p>
+<center><img src="images/ComplexFunctions_1_2_9.png"></center>
+<h3 style="text-indent: 1em;">リーマン球面 \(\mathbb{K}\) 上の円の射影</h3>
+<p>
+リーマン球面上の円は、平面との交線なので, 平面の式を満たす。<br>
+(\(\lambda\xi+\mu\eta+\nu\zeta+\delta=0\),　\(\lambda,\mu,\nu\) は実数)<br>
+<br>
+公式(2)を代入。
+
+\[
+\begin{align}
+&\lambda\frac{x}{x^2+y^2+1}+\mu\frac{y}{x^2+y^2+1}+\nu\frac{x^2+y^2}{x^2+y^2+1}+\delta=0 \\
+\\
+&\lambda x + \mu y + \nu x^2+ \nu y^2 + \delta x^2 + \delta y^2 + \delta = 0 \\
+\\
+&(\nu+\delta)(x^2+y^2)+\lambda x+\mu y + \delta = 0
+\end{align}
+\]
+
+これは<br>
+<br>
+　　\(\mathbb{C}\) 上の円または直線の方程式は<br>
+　　\(a(x^2+y^2)+2bx+2cy+d=0\; (a,b,c,d は実数で, b^2+c^2-ad\geq 0)\)<br>
+
+<br>
+と同じ形になっており、複素平面上の円または直線になっている。
+</p>
+
+    </body>
+</html>

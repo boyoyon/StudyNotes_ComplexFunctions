@@ -122,9 +122,10 @@
 <p>
 \(S,N,P\) の作る平面で切断した切断面を考える。
 </p>
-<center><img src="images/ComplexFunctions_1_1_41.png"></center>
+<center><img src="images/ComplexFunctions_1_2_2.png"></center>
 <p>
-\(\triangle NSz\) と \(\triangle NQP\) は相似なので、\(x,y\) に相似比を掛けて \(\xi,\eta\) を求めたいが、相似比に \(\zeta\) が残ってしまう。
+\(\triangle NSz\) と \(\triangle NQP\) は相似なので、\(x,y\) に相似比を掛けて \(\xi,\eta, \zeta\) を求めたいが、<br>
+相似比に \(\zeta\) が残ってしまう。
 
 \[
 \begin{align}
@@ -133,23 +134,27 @@
 &=\frac{\sqrt{\xi^2+\eta^2+\zeta^2-2\zeta+1}}{\sqrt{x^2+y^2+1}}\underbrace{=}_{\xi^2+\eta^2+\zeta^2-\zeta=0}\frac{\sqrt{1-\zeta}}{\sqrt{x^2+y^2+1}}
 \end{align}
 \]
-
-ピンクの補助線を追加して、もう一個の相似三角形を使って \(\zeta\) 依存を消す。
 </p>
-<center><img src="images/ComplexFunctions_1_1_42.png"></center>
+<center><img src="images/ComplexFunctions_1_2_5.png"></center>
 <p>
-\(NS\) は円の中心を通る直線なので, \(\angle NPS\) は \(90^\circ\) になる。(円周角＝中心角÷2, 中心角が180°)<br>
+・点 \(P\) の高さが \(\zeta\) で決まるという条件しか使っていないため。<br>
+・点 \(P\) が球面上にあるという条件を追加する必要がある。<br>
+ピンクの補助線を追加して、もう一個の相似三角形を使って相似比の \(\zeta\) 依存を消す。
+</p>
+<center><img src="images/ComplexFunctions_1_2_3.png"></center>
+<p>
+\(NS\) は円の中心を通る直線なので, \(\angle NPS\) は \(90^\circ\) になる。(円周角＝中心角÷2, 中心角=180°)<br>
 \(\Rightarrow \triangle NSz\) と \(\triangle NPS\) は相似になる。<br>
 
 \[
-\frac{PN}{NS}=\frac{NS}{zN} \Rightarrow PN=\frac{NS^2}{zN}
-\]
-
-\[
-\frac{PQ}{zS}=\frac{PN}{zN}\underbrace{=}_{上式を代入}\frac{NS^2}{zN^2}=\frac{1^2}{\sqrt{x^2+y^2+1}^2}=\frac{1}{x^2+y^2+1}
+\begin{align}
+&\frac{PN}{NS}=\frac{NS}{zN} \Rightarrow PN=\frac{NS^2}{zN} \\
+\\
+&\frac{PQ}{zS}=\frac{PN}{zN}\underbrace{=}_{上式を代入}\frac{NS^2}{zN^2}=\frac{1^2}{\sqrt{x^2+y^2+1}^2}=\frac{1}{x^2+y^2+1}
+\end{align}
 \]
 </p>
-<center><img src="images/ComplexFunctions_1_1_43.png"></center>
+<center><img src="images/ComplexFunctions_1_2_4.png"></center>
 <p>
 
 \[
@@ -164,7 +169,7 @@
 \end{align}
 \]
 
-ここで点 \(z\) を 三次元内の平面上の点 (x,y,0)表現から,複素数 \(z=x+iy\) 表現に変えると
+ここで点 \(z\) を 三次元内の平面上の点表現 (x,y,0) から,複素数表現 \(z=x+iy\) に変えると
 
 \[
 x=\frac{z+\overline{z}}{2},　　y=\frac{z-\overline{z}}{2i},　　x^2+y^2=z\overline{z}
