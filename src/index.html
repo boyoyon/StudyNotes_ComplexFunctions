@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <title>複素関数</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+        </style>
+    </head>
+    <body>
+        <h1><center>複素関数　ソフトウェア</center></h1>
+        <h2>なにものか？</h2>
+<p>
+息抜きのソフトウェア作成
+</p>
+<h3>環境構築</h3>
+<p>
+pip install opencv-python open3d
+</p>
+<h3>立体射影</h3>
+<p>
+画像が球面の一部に貼り付けられるだけのプログラムです<br>
+<br>
+
+① 画像 → 立体射影 → PLYファイル書き出し<br>
+　 python stereographics.py (画像ファイル)<br>
+<br>
+　「stereographics.ply」が出力されます。<br>
+</p>
+<center><img src="images/fig1.png"></center>
+<center>入力画像例</center>
+<p>
+② PLYファイルの表示<br>
+　 python o3d_display_ply.py stereographics.ply<br>
+            <table border="1">
+                <tr><th>操作</th><th>機能</th></tr>
+                <tr><td>左ボタン押下＋ドラッグ</td><td>3Dモデルの回転</td></tr>
+                <tr><td>ホイールボタン押下＋ドラッグ</td><td>3Dモデルの移動</td></tr>
+                <tr><td>ホイール回転</td><td>3Dモデルの拡大・縮小</td></tr>
+                <tr><td>PrintScreenキー押下</td><td>スクリーンショット保存</td></tr>
+                <tr><td>ウィンドウ閉じるボタン押下　</td><td>プログラム終了</td></tr>
+            </table>
+</p>
+<center><img src="images/fig2.png"></center>
+<center>PLY表示例</center>
+    </body>
+</html>
