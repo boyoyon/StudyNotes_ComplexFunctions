@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>複素関数</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+            .margin-large
+            {
+                margin-left: 30px;
+            }
+            .margin-large-blue
+            {
+                margin-left: 30px;
+                color: blue;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .two-columns {
+            display: flex;
+            flex-direction: row;
+            gap: 20px; /* 列間のスペース */
+        }
+        .column {
+            flex: 1; /* 各列が均等に幅を取る */
+        }
+    </style>
+<style>
+.three-columns {
+  display: flex;
+  gap: 10px; /* 列間の余白を設定 */
+}
+.column {
+  flex: 1; /* 各列の幅を均等にする */
+  padding: 10px; /* 内側の余白を設定 */
+}
+</style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 0px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+            ol
+            {
+                margin-left: 30px;
+            }
+            ul
+            {
+                margin-left: 30px;
+            }
+    </style>
+    <style>
+        .thin-line {
+            margin: 0; 
+            margin-left:2em;
+            border: 0;
+            height: 1px;
+            background-color: gray;
+        }
+
+        .thick-line {
+            margin: 0; 
+            margin-left:2em;
+            border: 0;
+            height: 2px;
+            background-color: black;
+        }
+    </style>
+    <style>
+        .blue {
+            color: blue; /* 好きな色に変更してください */
+        }
+    </style>
+  <style>
+    .boxed-paragraph {
+      margin-left: 30px;       /* 左側のマージン */
+      padding: 10px;           /* 枠の内側の余白 */
+      border: 2px solid #333;  /* 枠のスタイル */
+      background-color: #f9f9f9; /* 背景色（任意） */
+      width: fit-content;      /* コンテンツに合わせた幅 */
+    }
+  </style>
+    </head>
+    <body>
+        <h1><center>2. 微分法</center></h1>
+
+<h2>2.1 複素関数</h2>
+
+<h3 style="text-indent: 1em;">複素関数</h3>
+<p>
+独立変数 \(z\) も従属変数 \(w\) もともに複素数である関数 \(w=f(z)\) を <strong>複素関数</strong> という。
+
+\[
+\begin{align}
+w &= f(z) \\
+&\downarrow \\
+u+iv &= f(x+iy)
+\end{align}
+\]
+
+独立変数が2次元で, 従属変数も2次元なので, 複素関数をそのままグラフ表現すると(2+2=)4次元となる。<br>
+そのままでは把握しにくいので以下のような対応を行う。<br>
+<br>
+① 2変数 \((x,y)\)→実数値(\(u\) または \(v\)) 関数の2つの組と考える。<br>
+　(2+1=3次元のグラフ2個なら把握できる。両方の関連を含めた把握は相変わらず難しいが･･･)
+
+\[
+u=u(x,y),　　v=v(x,y)
+\]
+
+例: \(w=f(z)=z^2\) <br>
+　・\(u(x,y)=x^2-y^2\) <br>
+　・\(v(x,y)=2xy\)<br>
+<p>
+<center><img src="images/ComplexFunctions_2_1_1.png"></center>
+
+<p>
+② 独立変数 \(z\) の値が変動する複素平面を <strong>\(z\) 平面</strong>, 従属変数 \(w\) の値が変動する複素平面を <strong>\(w\) 平面</strong> と呼び, \(w=f(z)\) の <strong>定義域</strong> \(D\) を \(z\)平面上に, <strong>値域</strong> \(W\) を \(w\) 平面上にとり, \(D\) と \(W\) の対応関係を調べる。<br>
+(2つ並べた2次元のグラフなら把握できる。全体の把握は相変わらず難しいが･･･)
+</p>
+<center><img src="images/ComplexFunctions_2_1_2.png"></center>
+
+<h3 style="text-indent: 1em;">例題2.1</h3>
+<p>
+\(w=z^2\) により<br>
+ⅰ) \(z\) 平面の両軸に平行な直線は \(w\) 平面のいかなる曲線に対応するか<br>
+ⅱ) \(w\) 平面の両軸に平行な直線は \(z\) 平面のいかなる曲線に対応するか<br>
+<br>
+解答は<a href="ComplexFunctions_2_1_1.html">こちら</a>。
+</p>
+<h3 style="text-indent: 1em;">問1</h3>
+<p>
+次の関数　\(w=f(z)\) において, \(z\) が範囲 \(D\) を動くとき, \(w\) はどのような範囲を動くか。<br>
+ⅰ) \(w=iz,\;D=\{z\mid 1\leq |z| \leq 2,\; 0\leq \arg\;z\leq \pi\}\)<br>
+ⅱ) \(w=z^4,\;D=\left\{z\mid |z|\leq 1,\; 0\leq\arg\;z \leq\frac{\pi}{4}\right\}\)<br>
+<br>
+解答は<a href="ComplexFunctions_2_1_2.html">こちら</a>。
+</p>
+<h3 style="text-indent: 1em;">極限値への収束</h3>
+<p>
+\(z\) が \(z_0\) に近づくとは \(|z-z_0|\) が 0 に近づくことを意味し, これを \(z\rightarrow z_0\) と記す。<br>
+(\(z\) が \(z_0\) に近づく経路は無限にあるが, \(|z-z_0|\) を持ち出すことで実数の距離で議論することができる)<br>
+<br>
+関数 \(w=f(z)\) において
+
+\[
+z\rightarrow z_0\; のとき\; f(z)\rightarrow \alpha
+\]
+
+であれば, \(z\) が \(z_0\) に近づいたとき, \(f(z)\) は \(\alpha\) に収束するという。これを正確に定義すると以下のようになる。
+</p><p class="margin-large">
+\(w=f(z)\) の定義域を \(D\) とし,<br>
+どのような正の数 \(\varepsilon\gt 0\) に対しても,　正の数 \(\delta\gt 0\) を適当に定めて
+
+\[
+0\lt |z-z_0|\lt\delta,\;z\in D のとき常に\;|f(z)-\alpha|\lt\varepsilon\;(\alpha\neq\infty)
+\]
+
+となるようにできるならば, \(z\) が \(z_0\) に近づいたとき \(f(z)\) は <strong>極限値 \(\alpha\) に収束する</strong> といい
+
+\[
+\lim\limits_{z\rightarrow z_0}f(z)=\alpha　または　f(z)\rightarrow \alpha\;(z\rightarrow z_0)
+\]
+
+と記す。
+</p><p>
+この定義は形式的に実関数の場合と同じだから, 次が成り立つ。
+
+\[
+\left.
+\begin{align}
+&\lim\limits_{z\rightarrow z_0}f(z)=\alpha,　\lim\limits_{z\rightarrow z_0}g(z)=\beta のとき\\
+\\
+&\lim\limits_{z\rightarrow z_0}\{f(z)+g(z)\}=\alpha+\beta,　\lim\limits_{z\rightarrow z_0}\{kf(z)\}=k\alpha　(kは定数)\\
+\\
+&\lim\limits_{z\rightarrow z_0}\{f(z)g(z)\}=\alpha\beta,　\lim\limits_{z\rightarrow z_0}\frac{f(z)}{g(z)}=\frac{\alpha}{\beta}　(\beta\neq 0)
+\end{align}
+\right\}
+\tag{1}
+\]
+</p>
+
+<p>
+\(z=x+iy\) のとき, \(|z|=\sqrt{x^2+y^2}\) であるから
+
+\[
+|x|,|y|\leq|z|\leq|x|+|y|
+\]
+
+(導出は<a href="ComplexFunctions_2_1_3.html">こちら</a>)<br>
+<br>
+したがって
+
+\[
+[z\rightarrow 0] \Longleftrightarrow [(x,y)\rightarrow (0,0)]
+\]
+</p>
+
+<p>
+　このことより, 次の関係がわかる。<br>
+　・\(z=x+iy,　z_0=x_0+iy_0\)<br>
+　・\(f(z)=u(x,y)+iv(x,y)\)<br>
+　・\(\alpha=a+ib\)
+　とすると
+
+\[
+\lim\limits_{z\rightarrow z_0} f(z)=\alpha \Longleftrightarrow
+\begin{cases}
+\lim\limits_{(x,y)\rightarrow (x_0,y_0)} u(x,y) = a \\
+\\
+\lim\limits_{(x,y)\rightarrow (x_0,y_0)} v(x,y) = b
+\end{cases}
+\tag {2}
+\]
+
+※ 極限については, 複素関数を 2つの別々の関数と考えても結果は同じ。
+</p>
+
+<h3 style="text-indent: 1em;">\(\infty\) を含む極限</h3>
+<p>
+\(\infty\) を含む極限については次のように定義する。
+
+\[
+\left.
+\begin{align}
+&\lim\limits_{t\rightarrow 0}f\left(\frac{1}{t}\right)=\alpha\Longleftrightarrow \lim\limits_{z\rightarrow\infty}f(z)=\alpha　(\alpha:有限複素数)\\
+\\
+&\lim\limits_{z\rightarrow z_0}\frac{1}{f(z)}\Longleftrightarrow \lim\limits_{z\rightarrow z_0}f(z)=\infty \\
+\\
+&\lim\limits_{t\rightarrow 0}\frac{1}{f\left(\frac{1}{t}\right)}=0\Longleftrightarrow \lim\limits_{z\rightarrow \infty}f(z)=\infty
+\end{align}
+\right\}
+\tag{3}
+\]
+
+</p>
+
+<h3 style="text-indent: 1em;">例題2.2</h3>
+<p>
+ⅰ) \(\lim\limits_{z\rightarrow 0}\frac{Re(z)}{z}\),　ⅱ)\(\lim\limits_{z\rightarrow\infty}\frac{1}{1+z^2}\)　を求めよ。<br>
+<br>
+解答は<a href="ComplexFunctions_2_1_4.html">こちら</a>。
+</p>
+
+<h3 style="text-indent: 1em;">問2</h3>
+<p>
+次の極限値を求めよ。<br>
+ⅰ)\(\lim\limits_{z\rightarrow 0}\frac{\overline{z}}{z}\),　ⅱ)\(\lim\limits_{z\rightarrow 1}\frac{z\overline{z}+2z-\overline{z}-2}{z^2-1}\),　ⅲ)\(\lim\limits_{z\rightarrow i}\frac{1}{1+z^2}\)<br>
+<br>
+解答はこちら。
+</p>
+
+<h3 style="text-indent: 1em;">連続</h3>
+<p>
+\(z_0\) が, \(w=f(z)\) の定義域 \(D\) に属し, \(\lim\limits_{z\rightarrow z_0}f(z)=f(z_0)\) が成り立つとき, \(f(z)\) は <strong>\(z_0\) で連続</strong> であるという。すなわち,
+</p><p class="margin-large">
+どのような正の数 \(\varepsilon\gt 0\) に対しても, 正の数 \(\delta\gt 0\) を適当に定めて
+
+\[
+|z-z_0|\lt \delta,　z\in D\; のちき常に\;(f(z)-f(z_0)|\lt \varepsilon
+\]
+
+となるようにできるとき, \(fz)\) は \(z_0\) で連続という。<br>
+<br>
+</p>
+<p>
+次に \(f(z)=u(x,y)+iv(x,y)\) \((z=x+iy\)) が \(z_0=x_0+iy_0\) で連続なことを \(u,v\) の条件で表してみる。
+
+\[
+\lim\limits_{z\rightarrow z_0}f(z)=f(z_0)\longleftrightarrow
+\begin{cases}
+\lim\limits_{(x,y)\rightarrow (x_0,y_0)}u(x,y)=u(x_0,y_0) \\
+\\
+\lim\limits_{(x,y)\rightarrow (x_0,y_0)}v(x,y)=v(x_0,y_0)
+\end{cases}
+\]
+</p>
+<p class="boxed-paragraph">
+\(f(z)=u(x,y)+iv(x,y)\;(z=x+iy)\) が \(z_0=x_0+iy_0\) で連続である条件は, \(u(x,y),v(x,y)\) がともに \((x_0,y_0)\) で連続なことである。
+</p>
+
+
+
+
+<h3 style="text-indent: 1em;">領域で連続</h3>
+<p>
+</p>
+
+つづく･･･<br>
+<br>
+極限,連続性に関する限り,複素関数は2つの2変数実関数の組を考えるのと同じである。しかし微分可能性に至って決定的な差異が現れる。→ Cauchy-Riemann の方程式
+
+    </body>
+</html>
