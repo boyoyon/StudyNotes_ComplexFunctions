@@ -9,8 +9,12 @@ ys = np.linspace(-YRANGE, YRANGE, 100)
 
 x, y = np.meshgrid(xs, ys)
 
-u = x ** 2 - y ** 2
+z = x + 1j * y
+w = z ** 2
 
 ax = plt.axes(projection='3d')
-ax.plot_surface(x, y, u)
+
+ax.plot_surface(x, y, w.real)
+#ax.plot_surface(x, y, w.imag)
+
 plt.show()
