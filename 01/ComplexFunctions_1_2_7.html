@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>複素関数</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+            .margin-large
+            {
+                margin-left: 30px;
+            }
+            .margin-large-blue
+            {
+                margin-left: 30px;
+                color: blue;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .two-columns {
+            display: flex;
+            flex-direction: row;
+            gap: 20px; /* 列間のスペース */
+        }
+        .column {
+            flex: 1; /* 各列が均等に幅を取る */
+        }
+    </style>
+<style>
+.three-columns {
+  display: flex;
+  gap: 10px; /* 列間の余白を設定 */
+}
+.column {
+  flex: 1; /* 各列の幅を均等にする */
+  padding: 10px; /* 内側の余白を設定 */
+}
+</style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 0px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+            ol
+            {
+                margin-left: 30px;
+            }
+            ul
+            {
+                margin-left: 30px;
+            }
+    </style>
+    <style>
+        .thin-line {
+            margin: 0; 
+            margin-left:2em;
+            border: 0;
+            height: 1px;
+            background-color: gray;
+        }
+
+        .thick-line {
+            margin: 0; 
+            margin-left:2em;
+            border: 0;
+            height: 2px;
+            background-color: black;
+        }
+    </style>
+    <style>
+        .blue {
+            color: blue; /* 好きな色に変更してください */
+        }
+    </style>
+    </head>
+    <body>
+        <h1><center>1.2 無限遠点</center></h1>
+
+<p style="text-align: right;">
+<a href="https://mathworld.wolfram.com/GreatCircle.html">https://mathworld.wolfram.com/GreatCircle.html</a> の訳
+</p>
+
+<h2>Great Circle <span style="color:blue;">大円</span></h2>
+<center><img src="images/SmallGreatCircles.svg"></center>
+<p>
+A great circle is a section of a sphere that contains a diameter of the sphere (Kern and Bland 1948, p. 87). Sections of the sphere that do not contain a diameter are called small circles. A great circle becomes a straight line in a gnomonic projection (Steinhaus 1999, pp. 220-221).
+
+<br><span style="color:blue;">
+大円とは、球面の直径を含む断面です（Kern and Bland 1948, p. 87）。直径を含まない断面は小円と呼ばれます。大円は中心射投影法では直線になります（Steinhaus 1999, pp. 220-221）。
+</span>
+</p><p>
+The shortest path between two points on a sphere, also known as an orthodrome, is a segment of a great circle. To find the great circle (geodesic) distance between two points located at latitude \(\delta\) and longitude \(\lambda\) of (\(\delta_1,\lambda_1\)) and (\(\delta_2,\lambda_2\)) on a sphere of radius a, convert spherical coordinates to Cartesian coordinates using
+
+<br><span style="color:blue;">
+球面上の2点間の最短経路（正距円筒図法とも呼ばれる）は、大円の一部です。半径 \(a\) の球面上の、緯度 \(\delta\)、経度 \(\lambda\) に位置する2点（\(\delta_1,\lambda_1\)）と（\(\delta_2,\lambda_2\)）間の大円（測地線）距離を求めるには、球面座標を直交座標に変換します。
+</span>
+
+\[
+\mathbf{r}_i=a
+\begin{bmatrix}
+\cos\lambda_i\cos\delta_i \\
+\sin\lambda_i\cos\delta_i \\
+\sin\delta_i
+\end{bmatrix} 	
+\tag{1}
+\]
+
+(Note that the latitude \(\delta\) is related to the colatitude \(\phi\) of spherical coordinates by \(\delta=90^\circ - \phi\), so the conversion to Cartesian coordinates replaces \(\sin\phi\) and \(\cos\phi\) by \(\cos\delta\) and \(\sin\delta\), respectively.) Now find the angle \(\alpha\) between \(\mathbf{r}_1\) and \(\mathbf{r}_2\) using the dot product,
+
+<br><span style="color:blue;">
+（緯度 \(\delta\) は球面座標の余緯度 \(\phi\) と \(\delta=90^\circ - \phi\) で関係付けられているので、直交座標への変換では \(\sin\phi\) と \(\cos\phi\) がそれぞれ\(\cos\delta\) と\(\sin\delta\)に置き換えられます。）次に、\(\mathbf{r}_1\)と\(\mathbf{r}_2\) の間の角度\(\alpha\)をドット積を使って求めます。
+</span>
+
+\[
+\begin{align}
+\cos\alpha &= \hat{\mathbf{r}}_1\cdot \hat{\mathbf{r}}_2 \tag{2} \\
+\\
+&= \cos\delta_1\cos\delta_2(\sin\lambda_1\sin\lambda_2+\cos\lambda_1\cos\lambda_2)+\sin\delta_1\sin\delta_2 \tag{3}\\
+\\
+&=\cos\delta_1\cos\delta_2\cos(\lambda_1-\lambda_2)+\sin\delta_1\sin\delta_2 \tag{4} 
+\end{align}
+\]
+
+The great circle distance is then
+
+<br><span style="color:blue;">
+大圏距離は
+</span>
+
+\[
+d=a\cos^{-1}[\cos\delta_1\cos\delta_2\cos(\lambda_1-\lambda_2)+\sin\delta_1\sin\delta_2]  \tag{5}
+\]
+
+For the Earth, the equatorial radius is \(a \approx 6378 km\), or 3963 (statute) miles. Unfortunately, the flattening of the Earth cannot be taken into account in this simple derivation, since the problem is considerably more complicated for a spheroid or ellipsoid (each of which has a radius which is a function of latitude). This leads to extremely complicated expressions for oblate spheroid geodesics and geodesics on other ellipsoids.
+
+<br><span style="color:blue;">
+地球の赤道半径は（約6378 km）、つまり3963マイル（法定）です。残念ながら、この単純な導出では地球の平坦化を考慮することができません。回転楕円体や楕円体（いずれも半径は緯度の関数）の場合、問題ははるかに複雑になるからです。そのため、扁平回転楕円体の測地線や他の楕円体上の測地線については非常に複雑な式が必要になります。
+</span>
+
+</p><p>
+The equation of the great circle can be explicitly computed using the geodesic formalism. Convert to spherical coordinates by writing
+
+<br><span style="color:blue;">
+大円方程式は測地線形式を用いて明示的に計算できます。球座標に変換するには次のように書きます。
+</span>
+
+\[
+\begin{align}
+\lambda	&= u  \tag{6}\\
+\\
+\phi &=\delta=\frac{1}{2}\pi-v  \tag{7}
+\end{align}
+\]
+
+Then the combinations of the partial derivatives \(P, Q,\) and \(R\) are given by
+
+<br><span style="color:blue;">
+すると偏微分\(P, Q,\)と\(R\)の組み合わせは次のように与えられる。
+</span>
+
+\[
+\begin{align}
+P &\equiv \left(\frac{\partial x}{\partial u}\right)^2+\left(\frac{\partial y}{\partial u}\right)^2+\left(\frac{\partial z}{\partial u}\right)^2=a^2\sin^2v  \tag{8} \\
+\\
+Q &\equiv \frac{\partial x}{\partial u}\frac{\partial x}{\partial v}+\frac{\partial y}{\partial u}\frac{\partial y}{\partial v}+\frac{\partial z}{\partial u}\frac{\partial z}{\partial v}=0  \tag{9} \\
+\\
+R &\equiv \left(\frac{\partial x}{\partial v}\right)^2+\left(\frac{\partial y}{\partial v}\right)^2+\left(\frac{\partial z}{\partial v}\right)^2=a^2  \tag{10}
+\end{align}
+\]
+
+The geodesic differential equation then becomes
+
+<br><span style="color:blue;">
+測地線微分方程式は次のようになる。
+</span>
+
+\[
+\cos v\sin^4v+2\cos v\sin^2vv^{\prime 2}+\cos vv^{\prime 4}-\sin vv^{\prime\prime}=0  \tag{11}
+\]
+
+However, because this is a special case of \(Q=0\) with \(P\) and \(R\) explicit functions of v only, the geodesic solution takes on the special form
+
+<br><span style="color:blue;">
+しかし、これは \(Q=0\) の特別な場合であり、 \(P\) と \(R\) は v のみの明示的な関数であるため、測地線解は特別な形をとる。
+</span>
+
+\[
+\begin{align}
+u &= c_1\int \sqrt{\frac{R}{P^2-c_1^2P}}dv  \tag{12} \\
+\\
+&=c_1\int\frac{dv}{\sqrt{a^2\sin^4v-c_1^2\sin^2v}}  \tag{13} \\
+\\
+&=\int\frac{dv}{\sin v\sqrt{\left(\frac{a}{c_1}\right)^2\sin^2v-1}}  \tag{14} \\
+\\
+&=-tan^{-1}\left[\frac{\cos v}{\sqrt{\left(\frac{a}{c_1}\right)^2\sin^2v-1}}\right]+c_2  \tag{15}
+\end{align}
+\]
+
+(Gradshteyn and Ryzhik 2000, p. 174, eqn. 2.599.6), where \(c_1\) and \(c_2\) are constants of integration. Now rewrite in the simpler form
+
+<br><span style="color:blue;">
+（Gradshteyn and Ryzhik 2000, p. 174, 式2.599.6）ここで、\(c_1\)と\(c_2\)は積分定数である。より単純な形に書き直すと、
+</span>
+
+\[
+ u=-\sin^{-1}\left(\frac{\cot v}{\sqrt{\left(\frac{a}{c_1}\right)^2-1}}\right)+c_2  \tag{16}
+\]
+
+rearrange, and take the sine of both sides,
+
+<br><span style="color:blue;">
+整理して両辺の正弦をとり、
+</span>
+
+\[
+\sin(u+c_2)=\frac{\cot v}{\sqrt{\left(\frac{a}{c_1}\right)^2-1}}  \tag{17}
+\]
+
+Next, expand the left-hand side using a trigonometric addition formula and write \(\cot v=\cos v/\sin v\) to obtain
+
+<br><span style="color:blue;">
+次に、左辺を三角関数の加法公式を使って展開し、\(\cot v=\cos v/\sin v\)と書いて、
+</span>
+
+\[
+\sin c_2\cos u+\cos c_2\sin u=\frac{\cos v}{\sin v\sqrt{\left(\frac{a}{c_1}\right)^2-1}}  \tag{18}
+\]
+
+Now multiply through by \(a\sin v\) and rearrange to obtain
+
+<br><span style="color:blue;">
+これを \(a\sin v\) で掛けて変形すると、
+</span>
+
+\[
+a\cos u \sin v \sin c_2+a \sin u \sin v \cos c_2-\frac{a\cos v}{\sqrt{\left(\frac{a}{(c_1}\right)^2-1}}=0  \tag{19}
+\]
+
+This is the equation of the geodesic.
+
+<br><span style="color:blue;">
+これは測地線の方程式です。
+</span>
+
+</p><p>
+
+Identifying the first part of each term as the Cartesian coordinates \(x, y, z,\) respectively, (19) can immediately be recast as
+
+<br><span style="color:blue;">
+各項の最初の部分をそれぞれ直交座標\(x, y, z,\)とすると、(19)は次のように書き直すことができる。
+</span>
+
+\[
+x \sin c_2+y \cos c_2 - \frac{z}{\sqrt{\left(\frac{a}{c_1}\right)^2-1}}=0
+\tag{20}
+\]
+
+which shows that the geodesic giving the shortest path between two points on the surface of the equation lies on a plane that passes through the two points in question and also through center of the sphere.
+
+<br><span style="color:blue;">
+これは、方程式の表面上の 2 点間の最短経路を与える測地線が、問題の 2 点と球の中心を通る平面上にあることを示しています。
+</span>
+
+</p>
+    </body>
+</html>

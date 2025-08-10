@@ -100,6 +100,14 @@
             color: blue; /* 好きな色に変更してください */
         }
     </style>
+  <style>
+    .boxed-paragraph {
+      margin-left: 30px;       /* 左側のマージン */
+      padding: 10px;           /* 枠の内側の余白 */
+      border: 2px solid #333;  /* 枠のスタイル */
+      background-color: #ffffff; /* 背景色（任意） */
+    }
+  </style>
     </head>
     <body>
         <h1><center>1. 複素平面</center></h1>
@@ -283,6 +291,10 @@ z=r(\cos(\theta)+i\sin(\theta))
 </p>
 <p>
 極形式については、次の公式が成り立つ。
+
+</p>
+<p class="boxed-paragraph">
+
 \(z_1=r_1(\cos(\theta_1)+i\sin(\theta_1)), z_2=r_2(\cos(\theta_2)+i\sin(\theta_2))\) のとき
 
 \[
@@ -293,9 +305,15 @@ z_1z_2 &= r_1r_2\{\cos(\theta_1+\theta_2)+i\sin(\theta_1+\theta_2)\}  \tag{12} \
 \end{align}
 \]
 
+</p>
+<p>
+
 証明は<a href="ComplexFunctions_1_1_8.html">こちら</a>。<br>
 <br>
 公式(12)を繰り返し使えば, <strong>de Moivreの定理</strong>と呼ばれる次の公式が得られる。
+
+</p>
+<p class="boxed-paragraph">
 
 \[
 z=r\{\cos(\theta)+i\sin(\theta)\} \Rightarrow z^n=r^n\{\cos(n\theta)+i\sin(n\theta)\}\;(n:整数)  \tag{14}
