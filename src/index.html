@@ -22,6 +22,10 @@
 <h3>立体射影</h3>
 <p>
 画像が球面の一部に貼り付けられるだけのプログラムです<br>
+・画像の各ピクセルをz平面の点とみなす。<br>
+・リーマン球面に写像する。<br>
+・色付き点群としてPLYファイルに書き出す。<br>
+
 <br>
 [0] 環境構築<br>
 　　pip install opencv-python open3d<br>
@@ -77,4 +81,21 @@
 <center><img src="images/sin.png"></center>
 <center>w = np.sin(z) の w.real のグラフ表示例</center>
     </body>
+
+<h3>複素関数 z平面, w平面表示</h3>
+<p>
+z平面上をドラッグすると, 対応する点がw平面に表示されるプログラム。<br>
+(作ってみたがいまいち...)
+<br>
+<br>
+[0] 環境構築<br>
+　　opencv がインストールされていない場合は<br>
+　　pip install opencv-python<br>
+<br>
+[1] 使い方<br>
+　　　python z2w.py<br>
+　　　「zplane」画面上でマウスの左ボタンを押しながらマウスを移動させる<br>
+</p>
+<center><img src="images/z2w.gif"></center>
+<center>実行例</center>
 </html>
