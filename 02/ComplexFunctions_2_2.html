@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>複素関数</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+            .margin-large
+            {
+                margin-left: 30px;
+            }
+            .margin-large-blue
+            {
+                margin-left: 30px;
+                color: blue;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .two-columns {
+            display: flex;
+            flex-direction: row;
+            gap: 20px; /* 列間のスペース */
+        }
+        .column {
+            flex: 1; /* 各列が均等に幅を取る */
+        }
+    </style>
+<style>
+.three-columns {
+  display: flex;
+  gap: 10px; /* 列間の余白を設定 */
+}
+.column {
+  flex: 1; /* 各列の幅を均等にする */
+  padding: 10px; /* 内側の余白を設定 */
+}
+</style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 0px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+            ol
+            {
+                margin-left: 30px;
+            }
+            ul
+            {
+                margin-left: 30px;
+            }
+    </style>
+    <style>
+        .thin-line {
+            margin: 0; 
+            margin-left:2em;
+            border: 0;
+            height: 1px;
+            background-color: gray;
+        }
+
+        .thick-line {
+            margin: 0; 
+            margin-left:2em;
+            border: 0;
+            height: 2px;
+            background-color: black;
+        }
+    </style>
+    <style>
+        .blue {
+            color: blue; /* 好きな色に変更してください */
+        }
+    </style>
+  <style>
+    .boxed-paragraph {
+      margin-left: 30px;       /* 左側のマージン */
+      padding: 10px;           /* 枠の内側の余白 */
+      border: 2px solid #333;  /* 枠のスタイル */
+      background-color: #ffffff; /* 背景色（任意） */
+    }
+  </style>
+    </head>
+    <body>
+        <h1><center>2. 微分法</center></h1>
+
+<h2>2.2 Cauchy-Riemann の方程式</h2>
+
+<h3 style="text-indent: 1em;">微分可能</h3>
+<p>
+関数 \(w=f(z)\) について, 有限な極限値
+
+\[
+\lim\limits_{z\rightarrow z_0}\frac{f(z)-f(z_0)}{z-z_0}=\lim\limits_{h\rightarrow 0}\frac{f(z_0+h)-f(z_0)}{h}
+\]
+
+が存在するとき, \(f(z)\) は <strong>\(z_0\) で微分可能</strong> であるといい, この極限値を \(f(z)\) の \(z_0\) における <strong>微分係数</strong> といって, \(f^\prime(z_0)\) と記す。<br>
+<br>
+※ \(h\) は複素数であることに注意。
+</p>
+
+<p>
+定義より \(f(z)\) が \(z_0\) で微分可能ならば, \(f(z)\) は \(z_0\) で連続であることは直ちにわかる。<br>
+<br>
+(念のため確認は<a href="ComplexFunctions_2_2_1.html">こちら</a>)
+</p>
+<p>
+実関数のときとまったく同様に, \(f(z),g(z)\) が \(z_0\) で微分可能ならば
+
+\[
+f(z)+g(z),　　kf(z)\;(kは定数),　　f(z)g(z),　　\frac{f(z)}{g(z)}\;(g(z)\neq 0)
+\]
+
+も \(z_0\) で微分可能で, これらの微分係数はそれぞれ
+
+\[
+f^\prime(z_0)+g^\prime(z_0),　　kf^\prime(z_0),　　f^\prime(z_0)g(z_0)+f(z_0)g^\prime(z_0)
+\]
+
+\[
+\frac{f^\prime(z_0)g(z_0)-f(z_0)g^\prime(z_0)}{\{g(z_0)\}^2}
+\]
+
+に等しい。<br>
+<br>
+(確認はこちら)　　　　　　
+</p>
+
+　<strong>合成関数の微分</strong>
+
+<p>
+\(f(z)\) が \(z_0\) で微分可能, \(g(w)\) が \(w_0=f(z_0)\) で微分可能ならば, \(h(z)=g\{f(z)\}\) も \(z_0\) で微分可能で
+
+\[
+h^\prime(z_0)=g^\prime(w_0)f^\prime(z_0)
+\]
+
+が成り立つ。
+</p>
+
+<h3 style="text-indent: 1em;">定義2.1　正則</h3>
+<p>
+領域 \(D\) のすべての点が \(f(z)\) が微分可能のとき, \(f(z)\) は <strong>\(D\) で正則</strong> であるという。\(w=f(z)\) が \(D\) で正則のとき, \(D\) の各点 \(z\) にその点おける部分係数 \(f^\prime(z)\) を対応させることにより, \(D\) で定義された 1つの関数 \(f\prime(z)\) が定まる。この関数を \(f(z)\) の <strong>導関数</strong> 
+という。したがって
+
+\[
+f^\prime(z)=\lim\limits_{h\rightarrow 0}\frac{f(z+h)-f(z)}{h}=\lim\limits_{\zeta\rightarrow z}\frac{f(\zeta)-f(z)}{\zeta-z}  \tag{1}
+\]
+
+であり, これを \(\frac{dw}{dz}\) とか \(\frac{df(z)}{dz}\) とか \(w^\prime\) などと記す。
+</p>
+
+　<strong>1点で正則</strong>
+
+<p>
+\(f(z)\) が1点<strong>\(z_0\) で正則</strong> とは, 適当な \(z_0\) の近傍が存在し, その近傍で \(f(z)\) が正則なことをいう。<br>
+<br>
+※ 1点で微分可能 ⇒ 1点で微分可能の定義の極限が存在する。<br>
+　 1点で正則 ⇒ 1点の近傍内のすべての点で微分可能
+</p>
+
+<h3 style="text-indent: 1em;">例題 2.4</h3>
+<p>
+ⅰ) \(w=c(定数)\Rightarrow w^\prime=0\) <br>
+ⅱ) \(w=z^n \Rightarrow w^\prime=nz^{n-1}\;(nは正の整数)\)<br>
+<br>
+解答はこちら
+</p>
+
+<h3 style="text-indent: 1em;">問1</h3>
+<p>
+\(z\neq 0\) のとき, \(w=\frac{1}{z^n}\) に対し \(w^\prime=-\frac{n}{z^{n+1}}\;(nは正の整数)\) であることを示せ。<br>
+<br>
+解答はこちら。
+</p>
+
+<h3 style="text-indent: 1em;">問2</h3>
+<p>
+次の導関数を求めよ。<br>
+ⅰ) \(f(z)=(z^3+4z)(z^2-1)\),　ⅱ) \(f(z)=\frac{2z}{1-z}\),　ⅲ) \(f(z)=(z^2-4z+6)^2\)<br>
+<br>
+解答はこちら。
+</p>
+
+<h3 style="text-indent: 1em;">定理2.1　Cauchy-Riemannの関係式</h3>
+<p>
+\(f(z)=u(x,y)+i(v(x,y)\;(z=x+iy)\) が点 \(z_0=x_0+iy_0\) で微分可能であるための条件は, \(u,v\) がとものに \((x_0,y_0)\) で全微分可能で, かつその偏微分係数が次の <strong>Cauchy-Riemann の関係式</strong> をみたすことである。
+</p>
+<p class="boxed-paragraph">
+
+\[
+\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y},　　　\frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x} \tag{2}
+\]
+
+</p>
+<p>
+そして, このとき
+</p>
+<p class="boxed-paragraph">
+
+\[
+f^\prime(z_0)=\frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x}=\frac{\partial v}{\partial y}-i\frac{\partial u}{\partial y}  \tag{3}
+\]
+</p>
+<p>
+となる。<br>
+<br>
+証明はこちら。
+</p>
+    </body>
+</html>

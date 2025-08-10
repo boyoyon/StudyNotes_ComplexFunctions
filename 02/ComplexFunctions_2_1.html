@@ -105,8 +105,7 @@
       margin-left: 30px;       /* 左側のマージン */
       padding: 10px;           /* 枠の内側の余白 */
       border: 2px solid #333;  /* 枠のスタイル */
-      background-color: #f9f9f9; /* 背景色（任意） */
-      width: fit-content;      /* コンテンツに合わせた幅 */
+      background-color: #ffffff; /* 背景色（任意） */
     }
   </style>
     </head>
@@ -251,17 +250,18 @@ z\rightarrow z_0\; のとき\; f(z)\rightarrow \alpha
 
 \[
 \left.
-\begin{align}
-&\lim\limits_{t\rightarrow 0}f\left(\frac{1}{t}\right)=\alpha\Longleftrightarrow \lim\limits_{z\rightarrow\infty}f(z)=\alpha　(\alpha:有限複素数)\\
+\begin{array}{l l}
+独立変数が →\infty & \lim\limits_{t\rightarrow 0}f\left(\frac{1}{t}\right)=\alpha\Longleftrightarrow \lim\limits_{z\rightarrow\infty}f(z)=\alpha　(\alpha:有限複素数)\\
 \\
-&\lim\limits_{z\rightarrow z_0}\frac{1}{f(z)}\Longleftrightarrow \lim\limits_{z\rightarrow z_0}f(z)=\infty \\
+従属変数が →\infty &\lim\limits_{z\rightarrow z_0}\frac{1}{f(z)}=0 \Longleftrightarrow \lim\limits_{z\rightarrow z_0}f(z)=\infty \\
 \\
-&\lim\limits_{t\rightarrow 0}\frac{1}{f\left(\frac{1}{t}\right)}=0\Longleftrightarrow \lim\limits_{z\rightarrow \infty}f(z)=\infty
-\end{align}
+独立変数と従属変数が →\infty &\lim\limits_{t\rightarrow 0}\frac{1}{f\left(\frac{1}{t}\right)}=0\Longleftrightarrow \lim\limits_{z\rightarrow \infty}f(z)=\infty
+\end{array}
 \right\}
 \tag{3}
 \]
 
+※ 複素数に \(\infty\) は含まれないが, 変数変換(\(z→\frac{1}{t}, w→\frac{1}{f(z)})\) により →0 で →\(\infty\) を表現している。
 </p>
 
 <h3 style="text-indent: 1em;">例題2.2</h3>
@@ -276,7 +276,7 @@ z\rightarrow z_0\; のとき\; f(z)\rightarrow \alpha
 次の極限値を求めよ。<br>
 ⅰ)\(\lim\limits_{z\rightarrow 0}\frac{\overline{z}}{z}\),　ⅱ)\(\lim\limits_{z\rightarrow 1}\frac{z\overline{z}+2z-\overline{z}-2}{z^2-1}\),　ⅲ)\(\lim\limits_{z\rightarrow i}\frac{1}{1+z^2}\)<br>
 <br>
-解答はこちら。
+解答は<a href="ComplexFunctions_2_1_5.html">こちら</a>。
 </p>
 
 <h3 style="text-indent: 1em;">連続</h3>
@@ -286,11 +286,14 @@ z\rightarrow z_0\; のとき\; f(z)\rightarrow \alpha
 どのような正の数 \(\varepsilon\gt 0\) に対しても, 正の数 \(\delta\gt 0\) を適当に定めて
 
 \[
-|z-z_0|\lt \delta,　z\in D\; のちき常に\;(f(z)-f(z_0)|\lt \varepsilon
+|z-z_0|\lt \delta,　z\in D\; のちき常に\;|f(z)-f(z_0)|\lt \varepsilon
 \]
 
-となるようにできるとき, \(fz)\) は \(z_0\) で連続という。<br>
+となるようにできるとき, \(f(z)\) は \(z_0\) で連続という。<br>
+</p>
+<p>
 <br>
+※ 連続とは \(f(z)\) が \(z\rightarrow z_0\) で収束し, 極限値が \(f(z_0)\) になるということ。
 </p>
 <p>
 次に \(f(z)=u(x,y)+iv(x,y)\) \((z=x+iy\)) が \(z_0=x_0+iy_0\) で連続なことを \(u,v\) の条件で表してみる。
@@ -308,16 +311,76 @@ z\rightarrow z_0\; のとき\; f(z)\rightarrow \alpha
 \(f(z)=u(x,y)+iv(x,y)\;(z=x+iy)\) が \(z_0=x_0+iy_0\) で連続である条件は, \(u(x,y),v(x,y)\) がともに \((x_0,y_0)\) で連続なことである。
 </p>
 
-
-
-
 <h3 style="text-indent: 1em;">領域で連続</h3>
 <p>
+\(w=f(z)\) がある領域 \(D\) 内の全ての点で連続のとき, \(f(z)\) は <strong>領域 \(D\) で連続</strong> であるという。<br>
+定義も形式的には, 実関数のときと全く同様だから次の事実が成り立つ。
+</p>
+</p><p class="margin-large">
+\(f(z), g(z)\) が \(z_0\) で連続のとき
+
+\[
+f(z)+g(z),　kf(z)\;(kは複素数),　f(z)g(z),　\frac{f(z)}{g(z)}
+\]
+
+はいずれも \(z_0\) で連続である。ただし,除法に関しては,　\(g(z_0)\neq 0\) とする。 
 </p>
 
-つづく･･･<br>
+<h3 style="text-indent: 1em;">合成関数の連続</h3>
+<p>
+\(w=f(z)\) が \(z_0\) で連続で, \(w_0=f(z_0)\) とするとき, \(g(w)\) が \(w_0\) で連続ならば, \(g\{f(z)\}\) は \(z_0\) で連続である。
+</p>
+
+<h3 style="text-indent: 1em;">例題2.3</h3>
+<p>
+次の関数は原点で連続であるか。<br>
 <br>
-極限,連続性に関する限り,複素関数は2つの2変数実関数の組を考えるのと同じである。しかし微分可能性に至って決定的な差異が現れる。→ Cauchy-Riemann の方程式
+ⅰ)
+
+\[
+f(z)=
+\begin{cases}
+\frac{z}{|z|} & (z\neq 0) \\
+\\
+0 & (z=0)
+\end{cases}
+\]
+
+ⅱ)
+
+\[
+f(z)=
+\begin{cases}
+\frac{z^2}{|z|} & (z\neq 0) \\
+\\
+0 & (z=0)
+\end{cases}
+\]
+
+解答は<a href="ComplexFunctions_2_1_6.html">こちら</a>。
+</p>
+
+<h3 style="text-indent: 1em;">問3</h3>
+<p>
+\(f(z)\) が \(z_0\) で連続ならば \(\overline{f(z)},|f(z)|\) も \(z_0\) で連続であることを証明せよ。<br>
+<br>
+解答は<a href="ComplexFunctions_2_1_7.html">こちら</a>。
+</p>
+
+<h3 style="text-indent: 1em;">その他</h3>
+<p>
+有界な閉領域 \(A\) で連続な関数 \(f(z)\) は \(A\) で有界, すなわち \(A\) に属する任意の \(z\) に対して, \(|f(z)|\leq K\) を満たす定数 \(K\) が存在する。
+</p>
+
+<p>
+また \(A\) において \(|f(z)|\) は最大値と最小値をもつ。さらに \(A\) で一様連続となる。すなわち, 任意の \(\varepsilon\gt 0\) に対して, 適当な \(\delta\gt 0\) が存在して, \(A\) に属し \(|z_1-z_2|\lt \delta\) である任意の2点 \(z_1,z_2\) に対して  \(|f(z_1)-f(z_2)|\lt\varepsilon\) となるようにできる。これらのことは, 実関数の場合と同様に証明される。<br>
+<br>
+
+(補足は<a href="ComplexFunctions_2_1_8.html">こちら</a>)
+</p>
+<p>
+このように, <strong>極限,連続性に関する限り,複素関数は2つの2変数実関数の組を考えるのと同じ</strong>である。しかし次節以降で登場する<strong>微分可能性に至って決定的な差異が現れる。</strong>
+</p>
 
     </body>
 </html>
