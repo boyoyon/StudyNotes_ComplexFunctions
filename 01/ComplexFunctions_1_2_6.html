@@ -105,11 +105,45 @@
         <h1><center>1.2 無限遠点</center></h1>
 <h2>問 2.</h2>
 <p>
-\(\mathbb{C}\) 上の数列 \(\{z_k\}\) に対し, \(\lim\limits_{n\rightarrow\infty}|z_n|=\infty\) と \(\lim\limits_{n\rightarrow\infty}z_n=\infty\) は同値であり, \(z_n\neq 0\) のときはさらに \(\lim\limits_{n\rightarrow\infty}\frac{1}{|z_n|}=0\) とも同値であることを示せ。
+\(\mathbb{C}\) 上の数列 \(\{z_k\}\) に対し, \(\lim\limits_{n\rightarrow\infty}|z_n|=\infty\) と \(\lim\limits_{n\rightarrow\infty}z_n=\infty\) は同値であり, \(z_n\neq 0\) のときはさらに \(\displaystyle\lim\limits_{n\rightarrow\infty}\frac{1}{|z_n|}=0\) とも同値であることを示せ。
 </p>
 (解答)
+
+<h3 style="text-indent: 1em;">●\(\lim\limits_{n\rightarrow \infty}|z_n|=\infty \Longrightarrow \lim\limits_{n\rightarrow \infty} z_n=\infty\)</h3>
 <p>
-未着手。難しそう...
+\(\lim\limits_{n\rightarrow \infty}|z_n|=\infty\) より, 任意の正の実数 \(\varepsilon\gt 0\) に対して, ある自然数 \(N\) が存在し,<br>
+<br>
+\(n\geq N\) に対して \(|z_n|\gt \varepsilon \Longrightarrow z_n\in U_\varepsilon(\infty) \Longrightarrow \lim\limits_{n\rightarrow\infty} z_n=\infty\)
+</p>
+
+<br>
+<h3 style="text-indent: 1em;">●\(\lim\limits_{n\rightarrow \infty}|z_n|=\infty \Longleftarrow \lim\limits_{n\rightarrow \infty} z_n=\infty\)</h3>
+<p>
+\(\lim_\limits{n\rightarrow\infty}z_n=\infty\) より \(z_n\in U_R(\infty) \Longrightarrow n\geq N\; に対して\; |z_n|\gt R\)<br>
+<br>
+\(\Longrightarrow \lim\limits_{n\rightarrow\infty}|z_n|=\infty\)
+</p>
+
+<br>
+<h3 style="text-indent: 1em;">●\(\displaystyle\lim\limits_{n\rightarrow \infty}\frac{1}{|z_n|}=0 \Longrightarrow \lim\limits_{n\rightarrow \infty} z_n=\infty\)</h3>
+<p>
+\(\displaystyle\lim\limits_{n\rightarrow\infty}\frac{1}{|z_n|}=0\) より  \(\displaystyle \frac{1}{|z_n|}\lt \varepsilon\) となる \(n\geq N\) が存在する。<br>
+<br>
+\(\displaystyle \Longrightarrow |z_n|\gt \frac{1}{\varepsilon}\) となる \(n\geq N\) が存在する。\(\displaystyle \Longrightarrow z_n\in U_{\frac{1}{\varepsilon}}(\infty)\)<br>
+<br>
+\(\displaystyle \Longrightarrow \lim\limits_{n\rightarrow \infty} z_n=\infty\)
+</p>
+
+<br>
+<h3 style="text-indent: 1em;">●\(\displaystyle\lim\limits_{n\rightarrow \infty}\frac{1}{|z_n|}=0 \Longleftarrow  \lim\limits_{n\rightarrow \infty} z_n=\infty\)</h3>
+<p>
+\(\lim\limits_{n\rightarrow\infty}z_n=\infty\) より  \(z_n\in U_R(\infty)\)<br>
+<br>
+\(\displaystyle \Longrightarrow |z_n|\gt R\) となる \(n\geq N\) が存在する。<br>
+<br>
+\(\displaystyle \Longrightarrow \frac{1}{|z_n|}\lt \frac{1}{R}\) となる \(n\geq N\) が存在する。<br>
+<br>
+\(\displaystyle \Longrightarrow \lim\limits_{n\rightarrow\infty}\frac{1}{|z_n|}=0\)
 </p>
     </body>
 </html>

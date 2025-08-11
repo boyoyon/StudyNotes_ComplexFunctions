@@ -111,10 +111,99 @@
 　※球面上の円に沿って球を切断した場合、切断面に球の中心を含む場合, その球面上の円を大円という。<br>
 　　(球面上の 2 点は大円に沿った経路が最短になる → 球面上の直線のようなもの)
 </p>
-(解答)
+(解答)<br>
+ⅰ)
 <p>
-未着手
-</p>
+\(\mathbb{K}\)上の点　\(P:(\xi, \eta, \zeta)\)<br>
+\(\mathbb{K}\) の中心 \(C: (0,0,0.5)\)<br>
+\(PのCに対して対称な点　P'\)
 
+\[
+\vec{p}^\prime = \vec{c}+(\vec{c}-\vec{p})=2\vec{c}-\vec{p}
+=2
+\begin{pmatrix}
+0 \\
+0 \\
+0.5
+\end{pmatrix}
+-
+\begin{pmatrix}
+\xi \\
+\eta \\
+\zeta
+\end{pmatrix}
+=
+\begin{pmatrix}
+-\xi \\
+-\eta \\
+1-\zeta
+\end{pmatrix}  
+\]
+</p>
+<center><img src="images/ComplexFunctions_1_2_10.png"></center>
+<p>
+または
+</p>
+<center><img src="images/ComplexFunctions_1_2_11.png"></center>
+<p>
+\[
+\begin{align}
+&P=(\xi,\eta,\zeta)をz方向に-0.5 \Longrightarrow Q=(\xi,\eta,\zeta-0.5)\\
+\\
+&Q の対称点 Q^\prime=(-\xi,-\eta,-\zeta+0.5)\; ･･･\; Q の各座標の正負を反転 \\
+\\
+&Qの対称点をz方向に+0.5 \Longrightarrow P^\prime=(-\xi,-\eta,-\zeta+1)
+\end{align}
+\]
+
+公式(1)より
+
+\[
+\begin{align}
+\begin{pmatrix}
+\xi \\
+\eta \\
+\zeta
+\end{pmatrix}
+\Longrightarrow
+\begin{pmatrix}
+\displaystyle\frac{\xi}{1-\zeta} \\
+\displaystyle\frac{\eta}{1-\zeta}
+\end{pmatrix} \\
+\\
+\begin{pmatrix}
+-\xi \\
+-\eta \\
+-\zeta+1
+\end{pmatrix}
+\Longrightarrow
+\begin{pmatrix}
+\displaystyle\frac{-\xi}{1-(-\zeta+1)} \\
+\displaystyle\frac{-\eta}{1-(-\zeta+1)}
+\end{pmatrix} 
+=
+\begin{pmatrix}
+\displaystyle\frac{-\xi}{\zeta} \\
+\displaystyle\frac{-\eta}{\zeta}
+\end{pmatrix} 
+\end{align}
+\]
+</p>
+ⅱ)
+<p>
+\(N\)を通る大円は, 法線が \((\cos\theta,\sin\theta,0)\) の平面と, \(\mathbb{K}\) との交線になる。
+</p>
+<center><img src="images/ComplexFunctions_1_2_12.png"></center> 
+<p>
+・切断面：法線が \((\cos(\theta),\sin(\theta),0)\) の平面 ･･･ \(x\cos(\theta)+y\sin(\theta)=0,\; z:任意\)<br>
+　(点 \(N=(0,0,1), 中心=(0,0,0.5), S=(0,0,0)\) は切断面の方程式を満たす。<br>
+　⇒ 点 \(N\), 中心, 点\(S\) は切断面上にある。<br>
+　⇒ 切断面は大円 ･･･ 念のため確認)<br>
+<br>
+・大円上の(\(N\) 以外の)任意の点 \(P\) の立体射影 \(z\) も切断面上にある。<br>
+　(線分 \(\overline{NP}\) の延長線上に \(z\) は存在するので)<br>
+　⇒ 点 \(P\) の像は切断面と \(z=0\) 平面の交線: \(x\cos(\theta)+y\sin(\theta)=0,\;z=0\) となる。
+
+</p>
     </body>
 </html>
