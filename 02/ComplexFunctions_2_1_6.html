@@ -113,7 +113,7 @@
 \[
 f(z)=
 \begin{cases}
-\frac{z}{|z|} & (z\neq 0) \\
+\displaystyle\frac{z}{|z|} & (z\neq 0) \\
 \\
 0 & (z=0)
 \end{cases}
@@ -121,13 +121,27 @@ f(z)=
 </p>
 (解答)
 <p>
+\(z = x+iy\) とおくと
+
+\[
+f(z)=\frac{z}{|z|}=\frac{x+iy}{\sqrt{x^2+y^2}}
+\]
+
+\(y=mx\;(x\gt 0)\)に沿って \(z\) が 0 に近づくとき
+
+\[
+\lim\limits_{\substack{z→0\\y=mx\\x>0}}\frac{z}{|z|}=\lim\limits_{x→+0}\frac{x+i(mx)}{\sqrt{x^2+(mx)^2}}=\lim\limits_{x→+0}\frac{\cancel{x}(1+im)}{\cancel{x}\sqrt{1+m^2}}=\frac{1+im}{\sqrt{1+m^2}}
+\]
+
+極限値が \(m\) に依存するので収束しない。したがって不連続。
+
 </p>
 ⅱ)
 
 \[
 f(z)=
 \begin{cases}
-\frac{z^2}{|z|} & (z\neq 0) \\
+\displaystyle\frac{z^2}{|z|} & (z\neq 0) \\
 \\
 0 & (z=0)
 \end{cases}
@@ -135,6 +149,16 @@ f(z)=
 </p>
 (解答)
 <p>
+\(z\) を極座標形式で表すと \(z=re^{i\theta}\)
+
+\[
+\lim\limits_{z→0}\frac{z^2}{|z|}=\lim\limits_{\substack{r→0 \\ \theta:\;任意}}\frac{r^2e^{i2\theta}}{|re^{i\theta}|}=\lim\limits_{\substack{r→0 \\ \theta:\;任意}}\frac{r^2e^{i2\theta}}{\underbrace{|r|}_{=r}\underbrace{|e^{i\theta}|}_{=1}}=\lim\limits_{\substack{r→0 \\ \theta:\;任意}}\frac{r^{\cancel{2}}e^{i2\theta}}{\cancel{r}}=\lim\limits_{\substack{r→0 \\ \theta:\;任意}}re^{i2\theta}=0
+\]
+
+※ ChatGPT は \(r→0\) でも偏角が不定なので収束しないと言っていた･･･<br>
+　 参照しているテキストでは \(r=0\) 時の偏角は定義しない, と言っているので 0 に
+収束することにする。 <br>
+　 \(z=0 では f(z)=0\) なので原点で連続。
 </p>
 
     </body>
