@@ -107,9 +107,93 @@
 <h3>問2</h3>
 <p>
 次の極限値を求めよ。<br>
-ⅰ)\(\lim\limits_{z\rightarrow 0}\frac{\overline{z}}{z}\),　ⅱ)\(\lim\limits_{z\rightarrow 1}\frac{z\overline{z}+2z-\overline{z}-2}{z^2-1}\),　ⅲ)\(\lim\limits_{z\rightarrow i}\frac{1}{1+z^2}\)<br>
+ⅰ) \(\lim\limits_{z\rightarrow 0}\displaystyle\frac{\overline{z}}{z}\),　　ⅱ) \(\lim\limits_{z\rightarrow 1}\displaystyle\frac{z\overline{z}+2z-\overline{z}-2}{z^2-1}\),　　ⅲ) \(\lim\limits_{z\rightarrow i}\displaystyle\frac{1}{1+z^2}\)
 <p>
 (解答)
+</p>
+
+<p>
+ⅰ) \(\lim\limits_{z\rightarrow 0}\displaystyle\frac{\overline{z}}{z}\)
+</p>
+
+<p style="text-indent: 2em;">
+複素関数が極限値を持つ場合, \(z\) をどのような経路で 0 に近づけても極限値は変わらない。
+</p>
+
+<center><img src="images/ComplexFunctions_2_1_10.png"></center>
+
+<p style="text-indent: 2em;">
+・\(y\rightarrow 0, x\rightarrow 0\) の経路で極限を考えた場合
+
+\[
+\lim\limits_{z\rightarrow 0} \frac{\overline{z}}{z}
+=\lim\limits_{x\rightarrow 0}\frac{x-i0}{x+i0}=\lim\limits_{x\rightarrow 0}1=1
+\]
+
+</p>
+<p style="text-indent: 2em;">
+
+・\(x\rightarrow 0, y\rightarrow 0\) の経路で極限を考えた場合
+
+\[
+\lim\limits_{z\rightarrow 0} \frac{\overline{z}}{z}
+=\lim\limits_{y\rightarrow 0}\frac{0-iy}{0+iy}=\lim\limits_{y\rightarrow 0}-1=-1
+\]
+
+</p>
+<p style="text-indent: 2em;">
+経路によって結果が異なるので極限値を持たない。
+</p>
+<br>
+<p>
+ⅱ) \(\lim\limits_{z\rightarrow 1}\displaystyle\frac{z\overline{z}+2z-\overline{z}-2}{z^2-1}\)　
+</p>
+
+<p style="text-indent: 2em;">
+\(
+\lim\limits_{z\rightarrow 1}　とした場合,　|z|\rightarrow 1, |Im(z)|\rightarrow 0　となる。 
+\)
+
+</p>
+<p style="text-indent: 2em;">
+
+\(
+\lim\limits_{z\rightarrow 1} |\overline{z}-z|=\lim\limits_{z\rightarrow 1}|-2iIm(z)|= \lim\limits_{z\rightarrow 1}|2|\underbrace{|Im(z)|}_{\rightarrow 0}=0
+\)
+
+</p>
+
+<center><img src="images/ComplexFunctions_2_1_11.png"></center>
+
+</p>
+<p style="text-indent: 2em;">
+・\(
+\lim\limits_{z\rightarrow 1}|z\overline{z}-z^2|=\lim\limits_{z\rightarrow 1}|z(\overline{z}-z)|=\lim\limits_{z\rightarrow 1}\underbrace{|z|}_{\rightarrow 1}\underbrace{|\overline{z}-z|}_{\rightarrow 0}=0\Longrightarrow ●\lim\limits_{z\rightarrow 1}z\overline{z} = \lim\limits_{z\rightarrow 1} z^2
+\)
+
+</p>
+<p style="text-indent: 2em;">
+・\(
+\lim\limits_{z\rightarrow 1}|\overline{z}-z|=0\Longrightarrow ●\lim\limits_{z\rightarrow 1}\overline{z} = \lim\limits_{z\rightarrow 1} z
+\)
+
+</p>
+<p style="text-indent: 2em;">
+
+\(\displaystyle\therefore
+\lim\limits_{z\rightarrow 1}\frac{\overbrace{z\overline{z}}^{\rightarrow z^2}+\overbrace{2z-\overline{z}}^{\rightarrow z}-2}{z^2-1}
+=\lim\limits_{z\rightarrow 1}\frac{z^2+z-2}{z^2-1}
+=\lim\limits_{z\rightarrow 1}\frac{(z+2)\cancel{(z-1)}}{(z+1)\cancel{(z-1)}}
+=\lim\limits_{z\rightarrow 1}\frac{z+2}{(z+1)}=\frac{3}{2}
+\)
+</p>
+<br>
+<p>
+ⅲ) \(\lim\limits_{z\rightarrow i}\displaystyle\frac{1}{1+z^2}\)
+</p>
+
+<p style="text-indent: 2em;">
+・\(\lim\limits_{z\rightarrow i}\displaystyle\frac{1}{1+z^2}=\frac{1}{1+(-1)}=\frac{1}{0}\) となり極限は存在しない。
 </p>
 
     </body>
