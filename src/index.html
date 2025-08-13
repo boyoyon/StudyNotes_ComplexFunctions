@@ -73,10 +73,16 @@
 [2] python 3dgraph.py<br>
 </p>
 <center><img src="images/x^2-y^2.png"></center>
-<center>w = z ** 2 の w.real のグラフ表示例</center>
+<center>w = z ** 2 の実部 (w.real) のグラフ表示例</center>
 <br>
 <center><img src="images/2xy.png"></center>
-<center>w = z ** 2 の w.imag のグラフ表示例</center>
+<center>w = z ** 2 の虚部 (w.imag) のグラフ表示例</center>
+<br>
+<center><img src="images/abs.png"></center>
+<center>w = z ** 2 の絶対値 (np.abs(w)) のグラフ表示例</center>
+<br>
+<center><img src="images/angle.png"></center>
+<center>w = z ** 2 の偏角 (np.angle(w)) のグラフ表示例</center>
 <br>
 <center><img src="images/sin.png"></center>
 <center>w = np.sin(z) の w.real のグラフ表示例</center>
@@ -86,6 +92,9 @@
 　0001.png，0002.png, ･･･ に出力される。<br>
 <br>
 [4] python images_to_gif.py (画像群へのワイルドカード) (fps) (繰り返し回数)<br>
+  <br>
+  (環境構築) pip install imageio
+  <br>
 　画像群をGIF化して output.gif に出力する。
 　繰り返し回数に0を指定すると無限に繰り返す<br>
 　例) python images_to_gif.py 0*.png 10 0<br>
@@ -109,4 +118,5 @@ z平面上をドラッグすると, 対応する点がw平面に表示される�
 <center>実行例</center>
  </body>
 </html>
+
 
