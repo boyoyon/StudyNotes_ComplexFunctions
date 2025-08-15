@@ -104,97 +104,87 @@
     <body>
         <h1><center>2.2 Cauchy-Riemann の方程式</center></h1>
 
-<h3>合成関数の微分</h3>
-
+<h3>定理2.1　Cauchy-Riemannの関係式</h3>
 <p>
-\(f(z)\) が \(z_0\) で微分可能, \(g(w)\) が \(w_0=f(z_0)\) で微分可能ならば, \(h(z)=g\{f(z)\}\) も \(z_0\) で微分可能で
+\(f(z)=u(x,y)+i(v(x,y)\;(z=x+iy)\) が点 \(z_0=x_0+iy_0\) で微分可能であるための条件は, \(u,v\) がとものに \((x_0,y_0)\) で全微分可能で, かつその偏微分係数が次の <strong>Cauchy-Riemann の関係式</strong> をみたすことである。
 
 \[
-h^\prime(z_0)=g^\prime(w_0)f^\prime(z_0)
+\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y},　　　\frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x} \tag{2}
 \]
 
-が成り立つ。
+そして, このとき
+
+\[
+f^\prime(z_0)=\frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x}=\frac{\partial v}{\partial y}-i\frac{\partial u}{\partial y}  \tag{3}
+\]
 </p>
 (証明)
+<p style="padding-left: 1em;">
+●\(f(z)\) が \((x_0,y_0)\) で微分可能 ⇒ Cauchy-Riemanの関係式 ((2),(3)) を満たすことの証明
+</p>
 <p>
-<a href="https://hiraocafe.com/note/differential_of_composite-function.html">https://hiraocafe.com/note/differential_of_composite-function.html</a>を参考にした。<br>
+\(\displaystyle f^\prime(z_0)=\lim\limits_{h→0}\frac{f(z_0+h)-f(z_0)}{h}\) が存在する場合, \(h\) は任意の経路で 0 に近づいてよいから, \(x\) 軸に平行な直線に沿って \(z_0\) に近づくことを考える。\(h=Δx\) として<br>
 <br>
-\(z\) の増分 \(Δz\) に対する \(w\) の増分 \(Δw\) を \(Δw=f(z+Δz)-f(z)\) とする。<br>
-(\(w=f(z)\),<br>
-　\(Δw=f(z+Δz)-f(z)=f(z+Δz)-w\)<br>
-　\(\Rightarrow f(z+Δz)=w+Δw)\)<br>
-
 
 \[
-f^\prime(x)=\lim\limits_{Δz→0}\frac{f(z+Δz)-f(z)}{Δz}
-\]
-
-なので
-
-\[
-p(Δz)=
-\begin{cases}
-\displaystyle\frac{f(z+Δz)-f(z)}{Δz}-f^\prime(z) & (Δz\neq 0) \\
+\begin{align}
+&f^\prime(z_0)=\lim\limits_{Δx→0} \frac{f(z_0+Δx)-f(z_0)}{Δx} \\
 \\
-0 & (Δz=0)
-\end{cases}
-\]
-
-と定義すると, \(p(Δz)\) は \(Δz=0\) において連続であり
-
-\[
-f(z+Δz)-f(z)=(f^\prime(z)+p(Δz))Δz
-\]
-
-が成り立つ。<br>
-<br>
-同様に関数 \(g(w)\) に関しても
-
-\[
-q(Δw)=
-\begin{cases}
-\displaystyle\frac{g(w+Δw)-g(w)}{Δw}-g^\prime(w) & (Δw\neq 0) \\
+&=\lim\limits_{Δx→0}\frac{u(x_0+Δx,y_0)-u(x_0,y_0)+i\left(v(x_0+Δx,y_0)-v(x_0,y_0)\right)}{Δx} \\
 \\
-0 & (Δw=0)
-\end{cases}
+&=\lim\limits_{Δx→0}\left\{\frac{u(x_0+Δx,y_0)-u(x_0,y_0)}{Δx}+i\frac{v(x_0+Δx,y_0)-v(x_0,y_0)}{Δx}\right\} \\
+\\
+&=\frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x} \tag{A}
+\end{align}
 \]
 
-と定義すると, \(q(Δw)\) は \(Δw=0\) において連続であり
+<br>
+また \(z_0+h\) が \(y\) 軸に平行な直線に沿って \(z_0\) に近づくとすると, \(h=iΔy\) として
 
 \[
-g(w+Δw)-g(w)=(g^\prime(w)+q(Δw))Δw
+\begin{align}
+&f^\prime(z_0)=\lim\limits_{Δy→0} \frac{f(z_0+iΔy)-f(z_0)}{iΔy} \\
+\\
+&=\frac{1}{i}\lim\limits_{Δy→0}\left\{\frac{u(x_0,y_0+Δy)-u(x_0,y_0)}{Δy}+i\frac{v(x_0,y_0+Δy)-v(x_0,y_0)}{Δy}\right\} \\
+\\
+&=\frac{1}{i}\left(\frac{\partial u}{\partial y}+i\frac{\partial v}{\partial y}\right)=\frac{\partial v}{\partial y}-i\frac{\partial u}{\partial y} \tag{B}
+
+\end{align}
 \]
 
-が成り立つ。<br>
+式(A),(B)の右辺を比較すると
+
+\[
+\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y},　　\frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x}  \tag{C}
+\]
+
+となり　Cauchy-Riemann の関係式が成り立つ。<br>
 <br>
-\(\{g(f(z))\}^\prime\)<br>
-<br>
-\(=\displaystyle\lim\limits_{Δz→0}\frac{g(f(z+Δz))-g(f(z))}{Δz}\)<br>
-<br>
-　　　\(\downarrow　(f(z+Δz)=w+Δw,　f(z)=w)\)<br>
-<br>
-\(\displaystyle=\lim\limits_{Δz→0} \frac{g(w+Δw)-g(w)}{Δz}\)<br>
-<br>
-　　　\(\downarrow　(g(w+Δw)-g(w)=(g^\prime(w)+q(Δw))Δw)\)<br>
-<br>
-\(\displaystyle=\lim\limits_{Δz→0}\frac{(g^\prime(w)+q(Δw))Δw}{Δz}\)<br>
-<br>
-　　　\(\downarrow　(Δw=f(z+Δz)-f(z))\)<br>
-<br>
-\(=\displaystyle\lim\limits_{Δz→0}\frac{(g^\prime(w)+q(Δw))(f(z+Δz)-f(z))}{Δz}\)<br>
-<br>
-　　　\(\downarrow　(f(z+Δz)-f(z)=(f^\prime(z)+p(Δz))Δz)\)<br>
-<br>
-\(=\displaystyle\lim\limits_{Δz→0}\frac{(g^\prime(w)+q(Δw))(f^\prime(z)+p(Δz))\cancel{Δz}}{\cancel{Δz}} =\lim\limits_{Δz→0}(g^\prime(w)+q(Δw))(f^\prime(z)+p(Δz))\)<br>
-<br>
-　　　\(\downarrow　(Δz→0 ⇒Δw→0 ⇒ q(Δw)→0,　Δz→0 ⇒ p(Δz)→0)\)<br>
-<br>
-\(=g^\prime(w)f^\prime(z)\)<br>
-<br>
-　　　\(\downarrow (z→z_0 ⇒ w→w_0=f(z_0))\)<br>
-<br>
-\(=g^\prime(w_0)f^\prime(z_0)\)<br>
+</p>
+<p style="padding-left: 1em;">
+●\(f(z)\) が \((x_0,y_0)\) で微分可能 ⇒ \(u,v\) が \((x_0,y_0)\) 全微分可能であることの証明
+</p>
 <p>
+※ 2変数実関数 \(h(x,y)\) が \((x,y)=(x_0,y_0)\) で全微分可能とは, <br>
+　　<a href="https://manabitimes.jp/math/1310">https://manabitimes.jp/math/1310</a>などよれば<br>
+
+　　ある実数 \(A,B\) が存在し, <br>
+　　\(f(x,y)=f(x_0,y_0)+A(x-x_0)+B(y-y_0)+o(\sqrt{(x-x_0)^2+(y-y_0)^2})\)<br>
+　　(\(Δx,Δy\) の線形関数で表され、誤差が \((x,y)～(x_0,y_0)\) の距離に対して十分小さくなる)<br>
+<br>
+<br>
+
+\(f(z)\) が \(z_0\)で微分可能であるから
+
+\[
+\lim\limits_{h→0}\left|\frac{f(z_0+h)-f(z_0)}{h}-f^\prime(z_0)\right|=0
+\]
+
+したがって
+
+\[
+f(z_0+h)-f(z_0)=f^\prime(z_0)h+\varepsilon|h|  \tag{D}
+\]
 </p>
 
     </body>
