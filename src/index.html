@@ -98,8 +98,21 @@
 　画像群をGIF化して output.gif に出力する。
 　繰り返し回数に0を指定すると無限に繰り返す<br>
 　例) python images_to_gif.py 0*.png 10 0<br>
+<br>
+[5] [3]+[4] 連写してGIFアニメーション化<br>
+<br>
+　　(環境構築) pip install opencv-python, imageio<br>
+<br>
+    (使い方)
+    python continuous_shooting2.py (f(z)を定義する式)
+    　f(z)の実部,　f(z)の虚部のグラフをGIFアニメーション化
+    python continuous_shooting3.py (f(z)を定義する式)   
+    　f(z)の実部,　f(z)の虚部,　|f(z)| のグラフをGIFアニメーション化
+  
+　・f(z)を定義する式にスペースを含む場合はダブルクォーテーション(")で囲ってください。
+    例) python continuous_shooting3.py "z ** 3"  
 </p>
-<center><img src="images/sin.gif"></center>
+<center><img src="images/z^3.gif"></center>
 <h3>複素関数 z平面, w平面表示</h3>
 <p>
 z平面上をドラッグすると, 対応する点がw平面に表示されるプログラム。<br>
@@ -118,6 +131,7 @@ z平面上をドラッグすると, 対応する点がw平面に表示される�
 <center>実行例</center>
  </body>
 </html>
+
 
 
 
