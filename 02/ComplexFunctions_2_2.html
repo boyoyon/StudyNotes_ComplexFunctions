@@ -187,7 +187,7 @@ f^\prime(z)=\lim\limits_{h\rightarrow 0}\frac{f(z+h)-f(z)}{h}=\lim\limits_{\zeta
 <br>
 ※ 1点で微分可能 ⇒ 1点で微分可能の定義の極限が存在する。<br>
 　 1点で正則 ⇒ 1点の近傍内のすべての点で微分可能<br>
-　 (例は<a href="ComplexFunctions_2_2_4.html">こちら</a>)
+　 (微分可能だが正則でない例は, 例題 2.6 参照)
 </p>
 
 <h3 style="text-indent: 1em;">例題 2.4</h3>
@@ -217,10 +217,14 @@ f^\prime(z)=\lim\limits_{h\rightarrow 0}\frac{f(z+h)-f(z)}{h}=\lim\limits_{\zeta
 <p>
 \(f(z)=u(x,y)+i(v(x,y)\;(z=x+iy)\) が点 \(z_0=x_0+iy_0\) で微分可能であるための条件は, \(u,v\) がとものに \((x_0,y_0)\) で全微分可能で, かつその偏微分係数が次の <strong>Cauchy-Riemann の関係式</strong> をみたすことである。<br>
 <br>
-※ 複数種類の微分が登場するので、混乱しないように注意<br>
+(蛇足)<br>
+　　複数種類の微分が登場するので、混乱しないように注意<br>
 　 ・微分可能 　→ 対象は, 複素関数 \(f(z)\)<br>
-　 ・全微分可能 → 対象は, 2 変数実関数 \(u(x,y),　v(x,y)\)<br>
-　 ・偏微分係数 → 対象は, 2 変数実関数 \(u(x,y),　v(x,y)\)<br>
+　 ・全微分可能 → 対象は, 2変数実関数 \(u(x,y),　v(x,y)\)<br>
+　 ・偏微分係数 → 対象は, 2変数実関数 \(u(x,y),　v(x,y)\)<br>
+<br>
+　　全微分可能, 偏微分可能：<a href="https://mathlandscape.com/total-derivative/">https://mathlandscape.com/total-derivative/</a> などを参照。<br>
+(蛇足おわり)
 </p>
 <p class="boxed-paragraph">
 
@@ -241,7 +245,142 @@ f^\prime(z_0)=\frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x}=\frac
 <p>
 となる。<br>
 <br>
-証明は<a href="ComplexFunctions_2_2_8.html">こちら</a>。
+証明は<a href="ComplexFunctions_2_2_8.html">こちら</a>。<br>
+<br>
+(蛇足)<br>
+　　極限や連続は複素数と複素数の差を使って定義された。<br>
+　　(\(|z-z_0|\lt\delta ⇒ |f(z)-f(z_0)|\lt \varepsilon\) ならば･･･)<br>
+　　\(\Longrightarrow\) 実部は実部のまま, 虚部は虚部のまま, だった。<br>
+<br>
+　　微分は複素数と複素数の割り算で定義された。<br>
+　　\(\displaystyle\left(\lim\limits_{z→z_0}\frac{f(z)-f(z_0)}{z-z_0}\right)\)<br>
+　　\(\Longrightarrow z→z_0\) の経路によっては実部と虚部が入れ替わったり、入れ替わらなかったりする。<br>
+　　\(\Longrightarrow z→z_0\) の経路によらず極限を持つためには実部と虚部は独立ではいられなくなる。<br>
+(蛇足おわり)
 </p>
+<h3 style="text-indent: 1em;">系</h3>
+<p>
+\(f(z)=u(x,y)+iv(x,y)\) が領域 \(D\) で定義されているとする。\(D\) において \(u,v\) が偏微分可能で, その偏導関数 \(u_x,u_u,v_x,v_y\) が連続であり, しかも \(D\) の各点で Cauchy-Riemann の関係式が満足されるならば(このとき, \(u,v\) は \(D\) で Cauchy-Riemann の微分方程式を満たすという), \(f(z)\) は \(D\) で正則である。<br>
+<br>
+証明は<a href="ComplexFunctions_2_2_9.html">こちら</a>。<br>
+<br>
+
+</p>
+
+<h3 style="text-indent: 1em;">例題 2.5</h3>
+<p>
+次の関数の微分可能性を調べよ。<br>
+ⅰ) \(f(z)=Re(z)\),　ⅱ) \(f(z)=\overline{z}\) <br>
+<br>
+解答は<a href="ComplexFunctions_2_2_10.html">こちら</a>。
+</p>
+
+<h3 style="text-indent: 1em;">例題 2.6</h3>
+<p>
+\(f(z)=|z|^2\) は \(z=0\) で微分可能であるが, 正則ではにことを示せ。<br>
+<br>
+解答は<a href="ComplexFunctions_2_2_11.html">こちら</a>。
+</p>
+
+<h3 style="text-indent: 1em;">問3</h3>
+<p>
+\(z=x+iy\) を \((r,\theta)\) により極表示するとき, Cauchy-Riemann の微分方程式は
+
+\[
+\frac{\partial u}{\partial r}=\frac{1}{r}\frac{\partial v}{\partial \theta},　\frac{\partial v}{\partial r}=-\frac{1}{r}\frac{\partial u}{\partial \theta}
+\]
+
+となることを示せ。<br>
+<br>
+解答は<a href="ComplexFunctions_2_2_12.html">こちら</a>。
+</p>
+
+<h3 style="text-indent: 1em;">例題 2.7</h3>
+<p>
+\(f(z)\) が領域 \(D\) で正則で, 次の条件のどれかを満たせば \(f(z)\) は \(D\) で定数であることを示せ。<br>
+ⅰ) \(f^\prime(z)=0\) <sup>*1</sup>,　　ⅱ) \(Re(f(z))=\)定数,　　ⅲ) \(|f(z)|=\)定数<br>
+</p>
+
+<p class="margin-large">
+<sup>*1</sup> 実関数のときも同じ結果が成り立つが, その証明にはふつう平均値の定理を使う。しかし, <strong>複素関数では一般に平均値の定理は成り立たない</strong> → 問4参照
+</p>
+<p>
+解答は<a href="ComplexFunctions_2_2_13.html">こちら</a>。
+</p>
+
+<h3 style="text-indent: 1em;">問4</h3>
+<p>
+\(f(z)=z^3\) とし, \(\displaystyle D=\left\{z\mid Re(z)\geq \frac{1}{2}\right\}\) において, \(\displaystyle z_1=\frac{1+\sqrt{3}i}{2}, z_2=\frac{1-\sqrt{3}i}{2}\) として \(\displaystyle \frac{f(z_1)-f(z_2)}{z_1-z_2}\) を計算することにより, 平均値の定理が成り立たないことを確かめよ。<br>
+<br>
+解答は<a href="ComplexFunctions_2_2_14.html">こちら</a>。<br>
+<br>
+(蛇足)<br>
+　\(f(z)=u(x,y)+iv(x,y),　(z=x+iy)\)<br>
+<br>
+　・\(u(x,y), v(x,y)\) それぞれで平均値の定理を適用。<br>
+　・2点間の平均的な傾きと同じ傾きになる点が経路上に存在する。<br>
+　・しかし,\(u(x,y)\) と \(v(x,y)\) でその点が一致するとは限らない (一般には一致しない)。<br>
+　⇒ 複素関数としては, 2点間の平均的な傾きと同じ傾きになる経路上の点は存在しない。
+</p>
+<center><img src="images/mvt.png"></center>
+<p>
+(蛇足おわり)
+</p>
+
+<h3 style="text-indent: 1em;">例題 2.8</h3>
+<p>
+\(\displaystyle x=\frac{z+\overline{z}}{2}, y=\frac{z-\overline{z}}{2i}\) だから, \(w=u(x,y)+iv(x,y)=F(z,\overline{z})\) と置くことができる。このとき, Cauchy-Riemann の方程式は \(\displaystyle \frac{\partial F}{\partial \overline{z}}=0\) と同値である。<br>
+<br>
+解答は<a href="ComplexFunctions_2_2_15.html">こちら</a>。
+</p>
+
+<h3 style="text-indent: 1em;">Laplaceの微分方程式</h3>
+<p>
+後でわかるように \(f(z)\) が正則ならば \(f^\prime(z)\) は正則となる。<br>
+したがって, \(f(z)=u+iv\) は何度でも微分可能なので, \(u\) と \(v\) のすべての階数の偏導関数が存在して連続となる。そこで Cauchy-Riemann の微分方程式より
+
+\[
+\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}=0,　　\frac{\partial^2 v}{\partial x^2}+\frac{\partial^2 v}{\partial y^2}=0
+\]
+
+となり, \(u\) と \(v\) はともに <strong>Laplace の微分方程式</strong>
+</p>
+<p class="boxed-paragraph">
+
+\[
+Δw=\frac{\partial^2 w}{\partial x^2}+\frac{\partial^2 w}{\partial y^2}= 0 \tag{4}
+\]
+
+</p>
+<p>
+を満足しなければならない。<br>
+<br>
+証明は<a href="ComplexFunctions_2_2_16.html">こちら</a>。
+</p>
+
+<p>
+Laplace の微分方程式を満たし, 連続な2階偏導関数を持つ実関数を <strong>調和関数</strong> という。\(u,v\) が調和関数で, これらが Cauchy-Riemann の方程式 \(u_x=v_y, u_y=-v_x\) を満たすとき, \(v\) を \(u\) の <strong>共役調和関数</strong> といい, 次の定理が成り立つ。
+</p>
+
+<h3 style="text-indent: 1em;">定理2.2</h3>
+<p class="boxed-paragraph">
+\(f(z)=u(x,y)+iv(x,y)\;(z=x+iy)\) が領域 \(D\) で正則である条件は, \(u,v\) が \(D\) で調和関数で, \(u\) と \(v\) が共役であることである。
+</p>
+
+<h3 style="text-indent: 1em;">問5</h3>
+<p>
+定理2.2を証明せよ。<br>
+<br>
+解答は<a href="ComplexFunctions_2_2_17.html">こちら</a>。
+</p>
+
+<h3 style="text-indent: 1em;">例題2.9</h3>
+<p>
+\(u=x^2+2xy-y^2\) が調和関数であることを確かめ,　\(u\) を実部にもつ正則関数を求めよ。<br>
+<br>
+解答は<a href="ComplexFunctions_2_2_18.html">こちら</a>。
+</p>
+
+
     </body>
 </html>

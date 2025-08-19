@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>複素関数</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+            .margin-large
+            {
+                margin-left: 30px;
+            }
+            .margin-large-blue
+            {
+                margin-left: 30px;
+                color: blue;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .two-columns {
+            display: flex;
+            flex-direction: row;
+            gap: 20px; /* 列間のスペース */
+        }
+        .column {
+            flex: 1; /* 各列が均等に幅を取る */
+        }
+    </style>
+<style>
+.three-columns {
+  display: flex;
+  gap: 10px; /* 列間の余白を設定 */
+}
+.column {
+  flex: 1; /* 各列の幅を均等にする */
+  padding: 10px; /* 内側の余白を設定 */
+}
+</style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 0px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+            ol
+            {
+                margin-left: 30px;
+            }
+            ul
+            {
+                margin-left: 30px;
+            }
+    </style>
+    <style>
+        .thin-line {
+            margin: 0; 
+            margin-left:2em;
+            border: 0;
+            height: 1px;
+            background-color: gray;
+        }
+
+        .thick-line {
+            margin: 0; 
+            margin-left:2em;
+            border: 0;
+            height: 2px;
+            background-color: black;
+        }
+    </style>
+    <style>
+        .blue {
+            color: blue; /* 好きな色に変更してください */
+        }
+    </style>
+    </head>
+    <body>
+        <h1><center>2.2 Cauchy-Riemann の方程式</center></h1>
+
+<h3>問4</h3>
+<p>
+\(f(z)=z^3\) とし, \(\displaystyle D=\left\{z\mid Re(z)\geq \frac{1}{2}\right\}\) において, \(\displaystyle z_1=\frac{1+\sqrt{3}i}{2}, z_2=\frac{1-\sqrt{3}i}{2}\) として \(\displaystyle \frac{f(z_1)-f(z_2)}{z_1-z_2}\) を計算することにより, 平均値の定理が成り立たないことを確かめよ。
+</p>
+(解答)
+<p>
+\(\displaystyle f(z_1)=z_1^3=\frac{(1+\sqrt{3}i)^3}{2^3}=\frac{(1+\sqrt{3}i)(1-3+2\sqrt{3}i)}{8}
+=\frac{(1+\sqrt{3}i)(-2+2\sqrt{3}i)}{8}\)<br>
+<br>
+　　　\(\displaystyle =\frac{-2-6-\cancel{2\sqrt{3}i}+\cancel{2\sqrt{3}i}}{8}=-1\)<br>
+<br>
+\(\displaystyle f(z_2)=z_2^3=\frac{(1-\sqrt{3}i)^3}{2^3}=\frac{(1-\sqrt{3}i)(1-3-2\sqrt{3}i)}{8}
+=\frac{(1-\sqrt{3}i)(-2-2\sqrt{3}i)}{8}\)<br>
+<br>
+　　　\(\displaystyle =\frac{-2-6-\cancel{2\sqrt{3}i}+\cancel{2\sqrt{3}i}}{8}=-1\)<br>
+<br>
+\(\displaystyle z_1-z_2=\frac{1+\sqrt{3}i}{2}-\frac{1-\sqrt{3}i}{2}=\frac{\cancel{1}+\sqrt{3}i-\cancel{1}+\sqrt{3}i}{2}=\frac{2\sqrt{3}i}{2}=\sqrt{3}i\)<br>
+<br>
+\(\displaystyle \frac{f(z_1)-f(z_2)}{z_1-z_2}=\frac{\cancel{-1}-\cancel{(-1)}}{\sqrt{3}i}=0\)
+</p>
+
+    </body>
+</html>
