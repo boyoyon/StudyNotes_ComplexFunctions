@@ -104,52 +104,24 @@
     <body>
         <h1><center>2.2 Cauchy-Riemann の方程式</center></h1>
 
-<h3>問4</h3>
-<p>
-\(f(z)=z^3\) とし, \(\displaystyle D=\left\{z\mid Re(z)\geq \frac{1}{2}\right\}\) において, \(\displaystyle z_1=\frac{1+\sqrt{3}i}{2}, z_2=\frac{1-\sqrt{3}i}{2}\) として \(\displaystyle \frac{f(z_1)-f(z_2)}{z_1-z_2}\) を計算することにより, 平均値の定理が成り立たないことを確かめよ。
-</p>
-(解答)
-<p>
-●\(z=x+iy\) とした場合, \(f(z)=u(x,y)+iv(x,y)\) となる \(u(x,y),v(x,y)\) を求めておく。<br>
-<br>
-　・\(f(z)=z^3=(x+iy)^3=(x+iy)(x^2-y^2+i(2xy))=x^3-xy^2+i(2x^2y)+ix^2y-iy^3-2xy^2\)<br>
-<br>
-　　　\(=x^3-3xy^2+i(3x^2y-y^3)\)<br>
-<br>
-　　　→ \(u(x,y)=x^3-3xy^2,　v(x,y)=3x^2y-y^3\)<br>
-<br>
-●\(f(z_1)\) ～ \(f(z_2)\) の平均の傾きを求める。<br>
-<br>
-　・\(z_1, z_2\) は \(-1\) の三乗根なので, \(f(z_1)=f(z_2)=-1\)　(念のため確認は<a href="ComplexFunctions_2_2_19.html">こちら</a>)
-</p>
-<center><img src="images/q4_1.png"></center>
+<h3>問4の補足</h3>
 <p>
 　　→ \(f(z_1)\) ～ \(f(z_2)\) の平均の傾き \(\displaystyle \frac{f(z_1)-f(z_2)}{z_1-z_2} = 0\)<br>
 <br>
-　　→ \(u(x,y)\) の平均の傾きも \(0\),　\(v(x,y)\) の平均の傾きも \(0\)　(念のための確認は<a href="ComplexFunctions_2_2_20.html">こちら</a>)<br>
-<br>
-●\(z_1, z_2\) を結ぶ直線上で\(u(x,y)\) の傾きが \(0\) になる場所を求める。<br>
-<br>
-
-　\(\displaystyle \frac{\partial u}{\partial y}\Bigg|_{x=\frac{1}{2}}
-=\frac{\partial}{\partial y}\{x^3-3xy^2\}\Bigg|_{x=\frac{1}{2}}
-=\left\{-6xy\right\}_{x=\frac{1}{2}}=-3y=0 ⇒ y=0 \)<br>
-<br>
-
-●\(z_1, z_2\) を結ぶ直線上で\(v(x,y)\) の傾きが \(0\) になる場所を求める。<br>
-<br>
-
-　\(\displaystyle \frac{\partial v}{\partial y}\Bigg|_{x=\frac{1}{2}}
-=\frac{\partial}{\partial y}\{3x^2y-y^3\}\Bigg|_{x=\frac{1}{2}}
-=\left\{3x^2-3y^2\right\}_{x=\frac{1}{2}}= \frac{3}{8}-3y^2=0\)<br>
-<br>
-　\(\displaystyle \cancel{3}y^2=\frac{\cancel{3}}{8} ⇒ y=\pm\frac{1}{2\sqrt{2}}\)
+　　→ \(u(x,y)\) の平均の傾きも \(0\),　\(v(x,y)\) の平均の傾きも \(0\)
 </p>
-<center><img src="images/q4_3.png"></center>
+(念のため確認)
 <p>
-●\(u(x,y), v(x,y)\) それぞれで平均値の定理は成り立つが, 平均の傾きと同じ傾きとなる点が \(u(x,y), v(x,y)\) で異なる。<br>
-⇒ 複素関数としては, 経路上に平均の傾きと同じ点は存在しない。
-</p>
-
+・\(\displaystyle z_1 = \frac{1+\sqrt{3}i}{2} ⇒ x_1=\frac{1}{2},　y_1 = \frac{\sqrt{3}}{2}\)<br>
+<br>
+・\(\displaystyle z_2 = \frac{1-\sqrt{3}i}{2} ⇒ x_2=\frac{1}{2},　y_2 = -\frac{\sqrt{3}}{2}\)<br>
+<br>
+・\(u(x,y)=x^3-3xy^2,　v(x,y)=3x^2y-y^3\)　だったから<br>
+<br>
+　\(\displaystyle u(x_1,y_1)-u(x_2,y_2)=\left(\frac{1}{2}\right)^3-3\frac{1}{2}\left(\frac{\sqrt{3}}{2}\right)^2-\left(\frac{1}{2}\right)^3+3\frac{1}{2}\left(-\frac{\sqrt{3}}{2}\right)^2=0\)<br>
+<br>
+　\(\displaystyle v(x_1,y_1)-v(x_2,y_2)=3\left(\frac{1}{2}\right)^2\frac{\sqrt{3}}{2}-\left(\frac{\sqrt{3}}{2}\right)^3 - 3\left(\frac{1}{2}\right)^2\left(-\frac{\sqrt{3}}{2}\right)+\left(-\frac{\sqrt{3}}{2}\right)^3   \)<br>
+<br>
+　\(\displaystyle =\frac{3\sqrt{3}}{8} - \frac{3\sqrt{3}}{8}+\frac{3\sqrt{3}}{8}-\frac{3\sqrt{3}}{8}=0  \)
     </body>
 </html>
