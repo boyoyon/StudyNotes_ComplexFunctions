@@ -114,16 +114,273 @@
 
 <h2>2.3 指数関数, 三角関数</h2>
 
-<h3 style="text-indent: 1em;"></h3>
+<h3 style="text-indent: 1em;">指数関数</h3>
 <p>
+<strong>定義2.2</strong>　\(\mathbb{C}\) 内の任意の \(z=x+iy\) に対し,
+
+\[
+e^z=e^{x+iy}=e^x(\cos y+i\sin y)  \tag{1}
+\]
+
+と定義し, \(e^z\) を <strong>指数関数</strong> という。
 </p>
 
-<h3 style="text-indent: 1em;"></h3>
 <p>
+(1)で特に \(x=0\) (純虚数) とすると, \(e^{iy}=\cos y+i\sin y\) であるから, 複素数 \(z=r(\cosθ+i\sinθ)\) を \(re^{iθ}\) と書くことができる。
 </p>
 
-<h3 style="text-indent: 1em;"></h3>
 <p>
+指数関数の性質として, 次の公式が成り立つ。
+
+\[
+\left.
+\begin{align}
+&|e^z|=e^{Re(z)},\;\arg e^z=Im(z)+2n\pi\;(n=0,\pm1,\pm2,\cdots) \\
+\\
+&e^{z_1}e^{z_2}=e^{z_1+z_2}\;(指数法則)\\
+\\
+&(e^z)^\prime = e^z
+\end{align}
+\right\}
+\tag{2}
+\]
+</p>
+
+<p>
+<strong>問1</strong>　上の公式を証明せよ。<br>
+　　　解答は<a href="ComplexFunctions_2_3_1.html">こちら</a>。
+<p>
+
+
+<p>
+<strong>問2</strong>　\(\overline{(e^z)}=e^{\overline{z}}\) であることを示せ。<br>
+　　　解答は<a href="ComplexFunctions_2_3_2.html">こちら</a>。
+</p>
+
+<p>
+<strong>問3</strong>　任意の \(z\) に対して \(e^z\neq 0\) であることを示せ。<br>
+　　　解答は<a href="ComplexFunctions_2_3_3.html">こちら</a>。
+</p>
+<h3 style="text-indent: 1em;">周期関数</h3>
+<p>
+関数 \(f(z)\) に対して, \(0\)でない定数 \(ω\) が存在し, 定義域に属する任意の \(z\) に対して \(z+ω\) もその定義域に属し
+
+\[
+f(z+ω)=f(z)
+\]
+
+がなりたつとき, \(f(z)\) を <strong>周期関数</strong>, \(ω\) をその <strong>周期</strong> という。
+
+</p>
+
+<p>
+・指数関数 \(e^z\) は \(2n\pi i　(n=\pm1,\pm2,\cdots)\) を周期とする周期関数である。 
+
+\[
+e^{z+2n\pi i}=e^ze^{2n\pi i}=e^z(\underbrace{\cos 2n\pi}_{=1} +i\underbrace{\sin 2n\pi}_{=0})=e^z
+\]
+
+・指数関数は \(2n\pi i\) 以外の周期をもたない。<br>
+<br>
+　　　\(e^z\) の任意の周期を \(ω\) とすると
+
+\[
+e^{z+ω}=e^ze^ω=e^z
+\]
+
+　　　問3より \(e^z \neq0\) なので両辺を \(e^z\) で割ると \(e^ω=1\)。\(ω=α+iβ\) とおくと
+
+\[
+e^ω=e^{α+iβ}=e^α(\cos β+i\sin β)=1
+\]
+
+　　　両辺の絶対値と偏角を比較すると \(α=0, β=2n\pi\) となり
+
+\[
+ω=2n\pi i　(n=\pm1,\pm2,\cdots)
+\]
+
+　　　となる。<br>
+<br>
+・幾何学的には, \(z\)平面上の虚軸に平行な直線上に \(2\pi\) の間隔で並んだ無数の点に対応する \(w\) の値がすべて等しくなる。
+</p>
+
+<center><img src="images/2_3_2.png"></center>
+
+<h3 style="text-indent: 1em;">例題2.10</h3>
+<p>
+複素数 \(z\) に \(e^{iθ}\) を乗ずることの幾何学的意味を説明せよ。<br>
+<br>
+解答は<a href="ComplexFunctions_2_3_4.html">こちら</a>。
+</p>
+
+<h3 style="text-indent: 1em;">例題2.11</h3>
+<p>
+次の方程式を解け。　ⅰ) \(e^z=1-i\)　　ⅱ) \(e^{z^2}=i\)<br>
+<br>
+解答は<a href="ComplexFunctions_2_3_5.html">こちら</a>。
+</p>
+
+<p>
+<strong>問4</strong>　\(e^z\) が実数となるのは, \(z\) が複素平面上でどこにあるときか。<br>
+<br>
+解答は<a href="ComplexFunctions_2_3_6.html">こちら</a>。
+</p>
+
+<p>
+<strong>問5</strong>　次の方程式を解き, その解を図示せよ。<br>
+ⅰ) \(e^z=1\)　ⅱ) \(e^{z^2}=1\) <br>
+<br>
+解答は<a href="ComplexFunctions_2_3_7.html">こちら</a>。　　
+</p>
+
+<h3 style="text-indent: 1em;">三角関数,双曲関数</h3>
+<p>
+<strong>定義2.3</strong>　<strong>三角関数, 双曲関数</strong> は指数関数を用いて, 次のように定義される。
+
+\[
+\begin{array}{l l}
+\cos z=\displaystyle\frac{1}{2}(e^{iz}+e^{-iz}) & \cosh z = \displaystyle\frac{1}{2}(e^z+e^{-z}) \\
+\\
+
+\sin z = \displaystyle\frac{1}{2i}(e^{iz}-e^{-iz}) & \sinh z=\displaystyle\frac{1}{2}(e^z-e^{-z}) \\
+\\
+
+\tan z=\displaystyle\frac{\sin z}{\cos z} & \tanh z=\displaystyle\frac{\sinh z}{\cosh z} \\
+\\
+
+\cot z=\displaystyle\frac{\cos z}{\sin z} & \coth z=\displaystyle\frac{\cosh z}{\sinh z} \\
+\\
+
+\sec z= \displaystyle\frac{1}{\cos z} & sech z=\displaystyle\frac{1}{\cosh z} \\
+\\
+
+cosec z=\displaystyle\frac{1}{\sin z} & cosech z=\displaystyle\frac{1}{\sinh z}
+
+\end{array}
+\]
+
+指数関数の定義を用いれば, \(z\) が実数のときはそれぞれ実三角関数, 実双曲線関数に一致することがわかる。
+</p>
+
+<p>
+三角関数の性質について, 次の公式が成り立つ。
+
+\[
+\left.
+\begin{align}
+&\sin^2 z+\cos^2 z=1 \\
+\\
+&\sin(z_1+z_2)=\sin z_1 \cos z_2+\cos z_1\sin z_2 \\
+\\
+&\cos(z_1+z_2)=\cos z_1\cos z_2 - \sin z_1 \sin z_2 \\
+\\
+&(\sin z)^\prime=\cos z,　(\cos z)^\prime = -\sin z \\
+\\
+&e^{iz}=\cos z+i \sin z
+\end{align}
+\right\}
+\tag {4}
+\]
+
+　<strong>問6</strong>　公式(4)を証明せよ。<br>
+<br>
+　解答は<a href="ComplexFunctions_2_3_8.html">こちら</a>。
+<p>
+
+<p>
+実変数の場合と同様に, \(\sin z,\cos z\) はいずれも周期 \(2n\pi\) の周期関数である。
+
+\[
+\left.
+\begin{align}
+&\sin z_1 = \sin z_2 \\
+\\
+&\cos z_1 = \cos z_2
+\end{align}
+\right\}
+\Longleftrightarrow
+z_1=z_2+2n\pi
+\tag{5}
+\]
+
+</p>
+
+<h3 style="text-indent: 1em;">例題2.12</h3>
+<p>
+次の公式を証明せよ。<br>
+ⅰ) \(\displaystyle\cos\left(\frac{\pi}{2}-z\right)=\sin z\)　　ⅱ) \(\displaystyle\sin\left(\frac{\pi}{2}-z\right)=\cos z\)<br>
+<br>
+解答はこちら。<br>
+<br>
+<strong>問7</strong>　次の公式を証明せよ。<br>
+　　　\(\sin(-z)=-\sin z,　\cos(-z)=\cos z,　\tan(-z)=-\tan z\) <br>
+　　　\(\sin(\pi-z)=\sin z,　\cos(\pi-z)=-\cos z,　\tan(\pi-z)=-\tan z\)<br>
+<br>
+解答はこちら。
+</p>
+
+<h3 style="text-indent: 1em;">例題2.13</h3>
+<p>
+次の方程式を解け。ⅰ) \(\cos z=2\),　　ⅱ) \(\sin z=i\)<br>
+<br>
+解答はこちら。<br>
+<br>
+<strong>問8</strong>　次の方程式を解け。<br>
+　　　ⅰ) \(\sin z=1000\)　　ⅱ) \(\cos z=3i\) <br>
+<br>
+<br>
+解答はこちら。 <br>
+<br>
+例題, 問からわかるように, \(|\sin z|\leq 1,|\cos z|\leq 1\) は成り立たない。\(\sin z, \cos z\) は有界ではないことに注意。<br>
+
+</p>
+
+<h3 style="text-indent: 1em;">双曲関数に関する公式</h3>
+<p>
+双曲線関数については, 次の公式が成り立つ。
+</p>
+<p class="boxed-paragraph">
+\[
+\begin{align}
+&\sinh iz=i\sin z,　\cosh iz=\cos z,　\sin iz=i\sinh z, \\
+\\
+&\cos iz=\cosh z,　\cosh^2 z - \sinh^2 z = 1 \\
+\\
+&\cosh(z_1+z_2)=\cosh z_1\cosh z_2+\sinh z_1\sinh z_2 \\
+\\
+&\sinh(z_1+z_2)=\sinh z_1 \cosh z_2+\cosh z_1\sinh z_2 \\
+\\
+&(\sinh z)^\prime = \cosh z,　(\cosh z)^\prime=\sinh z
+\end{align}
+\tag{6}
+\]
+
+</p>
+
+<p>
+\(\sinh z,\cosh z\) は, 周期 \(2n\pi i\) の周期関数である。
+
+\[
+\left.
+\begin{align}
+&\sinh z_1 = \sinh z_2 \\
+\\
+&\cosh z_1 = \cosh z_2
+\end{align}
+\right\}
+\Longleftrightarrow
+z_1=z_2+2n\pi i
+\tag{7}
+\]
+
+　<strong>問9</strong>　上の公式を証明せよ。<br>
+<br>
+　解答はこちら。<br>
+<br>
+　<strong>問10</strong>　\(\sinh z=\sqrt{2}i,　\cosh z=\frac{1}{\sqrt[4]{3}}\) を解け。<br>
+<br>
+　解答はこちら。
 </p>
     </body>
 </html>
