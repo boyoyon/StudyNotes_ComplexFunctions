@@ -1,8 +1,6 @@
 from mpl_toolkits.mplot3d.axes3d import Axes3D
 import matplotlib.pyplot as plt
 import numpy as np
-from scipy.integrate import odeint
-
 
 #Create data
 t = np.linspace(-np.pi, np.pi,1000)
