@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>複素関数</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+            .margin-large
+            {
+                margin-left: 30px;
+            }
+            .margin-large-blue
+            {
+                margin-left: 30px;
+                color: blue;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .two-columns {
+            display: flex;
+            flex-direction: row;
+            gap: 20px; /* 列間のスペース */
+        }
+        .column {
+            flex: 1; /* 各列が均等に幅を取る */
+        }
+    </style>
+<style>
+.three-columns {
+  display: flex;
+  gap: 10px; /* 列間の余白を設定 */
+}
+.column {
+  flex: 1; /* 各列の幅を均等にする */
+  padding: 10px; /* 内側の余白を設定 */
+}
+</style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 0px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+            ol
+            {
+                margin-left: 30px;
+            }
+            ul
+            {
+                margin-left: 30px;
+            }
+    </style>
+    <style>
+        .thin-line {
+            margin: 0; 
+            margin-left:2em;
+            border: 0;
+            height: 1px;
+            background-color: gray;
+        }
+
+        .thick-line {
+            margin: 0; 
+            margin-left:2em;
+            border: 0;
+            height: 2px;
+            background-color: black;
+        }
+    </style>
+    <style>
+        .blue {
+            color: blue; /* 好きな色に変更してください */
+        }
+    </style>
+  <style>
+    .boxed-paragraph {
+      margin-left: 30px;       /* 左側のマージン */
+      padding: 10px;           /* 枠の内側の余白 */
+      border: 2px solid #333;  /* 枠のスタイル */
+      background-color: #ffffff; /* 背景色（任意） */
+    }
+  </style>
+    </head>
+    <body>
+        <h1><center>3. 積分法</center></h1>
+
+<h2>3.1 線積分</h2>
+
+<h3 style="text-indent: 1em;">曲線</h3>
+<p>
+\(a≦t≦b\) で定義された関数 \(z(t)=x(t)+iy(t)\) において \(x(t),y(t)\) が連続であるとき, その像 \(\{z \mid z=z(t),\;a≦t≦b\}\) を \(z\) 平面上の <strong>曲線</strong> という。 <br>
+<br>
+(蛇足は<a href="ComplexFunctions_3_1_dasoku_1.html">こちら</a>)
+</p>
+<center><img src="images/3_1_00.png"></center><br>
+<center><img src="images/curve.gif"></center>
+<p>
+・\(z(a)\neq z(b)\)：<strong>開曲線</strong><br>
+・\(z(a)=z(b)\)：<strong>閉曲線</strong><br>
+　という。
+</p>
+
+<p>
+・\(t_1\neq t_2\) のとき常に \(z(t_1)\neq z(t_2)\) であるもの<br>
+　(ただし, 閉曲線のときの \(z(a)=z(b)\) は例外とする)<br>
+　<strong>単一曲線</strong> または <strong>Jordan曲線</strong> という。
+</p>
+<center><img src="images/3_1_1.png"></center>
+
+<h3 style="text-indent: 1em;">定義3.1</h3>
+<p>
+\(z(t)=x(t)+iy(t)\;(a≦t≦b)\) において, \(x(t),y(t)\)がともに微分可能であり, 導関数 \(x^\prime(t), y^\prime(t)\) が連続であるとき, この曲線を <strong>滑らかな曲線</strong> といい, 有限個の滑らかな曲線を連結してできる曲線を <strong>区分的に滑らかな曲線</strong> という。
+</p>
+<center><img src="images/3_1_2.png"></center>
+
+<h3 style="text-indent: 1em;">曲線の長さ</h3>
+<p>
+区分的に滑らかな曲線は有限の長さをもち, その長さ \(L\) は微分積分学で良く知られているように以下のようになる。
+
+\[
+L=\int_a^b \sqrt{x^\prime(t)^2+y^\prime(t)^2}dt=\int_a^b|z^\prime(t)|dt  \tag{1}
+\]
+</p>
+<p>
+以後扱う曲線は区分的に滑らかな曲線に限るため, 曲線と記す。
+</p>
+<br>
+<h3 style="text-indent: 1em;">曲線の向き</h3>
+<p>
+一般に曲線 \(\{z=z(t)| a≦t≦b\}\) はその始点 \(z(a)=α\) から終点 \(z(b)=β\) に向かう向きをつけて考え, この曲線を \(C\) としたとき, 逆に \(β\) から \(α\) に向かう曲線 \(\{z=z(-t)| -b≦t≦a\}\) を \(-C\) と記す。
+</p>
+<center><img src="images/3_1_3.png"></center>
+
+<h3 style="text-indent: 1em;">曲線の連結</h3>
+<p>
+始点 \(α\), 終点 \(β\) の曲線 \(C_1\) と, 始点 \(β\), 終点 \(γ\) の曲線  \(C_2\) をつなげてつくられた始点 \(α\), 終点 \(γ\) の曲線を \(C_1+C_2\) と記す。 
+</p>
+<center><img src="images/3_1_4.png"></center>
+
+<h3 style="text-indent: 1em;">線積分</h3>
+<p>
+曲線 \(C=\{z=z(t)|a≦t≦b\}\) 上で関数 \(f(z)\) は連続であるとする。\([a,b]\) 上の分点 \(a=t_0\lt t_1\lt ･･･\lt t_{n-1}\lt t_n=b\) をとり, この分割を \(Δ\) とし,
+
+\[
+S_n=\sum_{k=1}^n f(z(τ_k))(z(t_k)-z(t_{k-1}))  \tag{2}
+\]
+
+を作る。ただし \(t_{k-1}≦τ_k≦t_k\) とする。<br>
+<p>
+(2)において, \(f(z)=u+iv,　z=x+iy\) とすれば,
+
+\[
+\begin{align}
+S_n &=\sum_{k=1}^n \left\{u(x(τ_k),y(τ_k))+iv(x(τ_k),y(τ_k))\right\} \\
+
+&　　　　\left\{(x(t_k)-x(t_{k-1}))+i(y(t_k)-y(t_{k-1}))\right\}　\\
+\\
+
+&={\color{blue}\sum_{k=1}^n u(x(τ_k),y(τ_k))(x(t_k)-x(t_{k-1}))} \\
+\\
+&　-{\color{orange}\sum_{k=1}^n v(x(τ_k),y(τ_k))(y(t_k)-y(t_{k-1}))} \\
+\\
+&　+i{\color{green}\sum_{k=1}^n u(x(τ_k),y(τ_k))(y(t_k)-y(t_{k-1}))} \\
+\\
+&　+i{\color{purple}\sum_{k=1}^n v(x(τ_k),y(τ_k))(x(t_k)-x(t_{k-1}))}
+
+\end{align}
+\]
+
+となる。(蛇足は<a href="ComplexFunctions_3_1_dasoku_2.html">こちら</a>)
+</p>
+<p>
+\(|Δ|=\max\limits_{1≦k≦n}|t_k-t_{k-1}|\) とし, \(|Δ|→0\) と分割を細かくすると右辺の4つの和は \(τ_k\) のとりかたにかかわらず収束して, その極限値は次の4つの線積分となる。
+
+\[
+\begin{align}
+&{\color{blue}\int_C u(x,y)dx = \int_a^b u(x(t),y(t))\frac{dx}{dt}dt} \\
+\\
+&{\color{orange}\int_C v(x,y)dy = \int_a^b v(x(t),y(t))\frac{dy}{dt}dt} \\
+\\
+&{\color{green}\int_C u(x,y)dy = \int_a^b u(x(t),y(t))\frac{dy}{dt}dt} \\
+\\
+&{\color{purple}\int_C v(x,y)dx = \int_a^b v(x(t),y(t))\frac{dx}{dt}dt} 
+\end{align}
+\]
+
+(蛇足は<a href="ComplexFunctions_3_1_dasoku_3.html">こちら</a>)<br>
+<br>
+　
+したがって, \(|Δ|→0\) のとき
+
+\[
+\begin{align}
+S_n &→ \int_C ({\color{blue}udx}-{\color{orange}vdy})+i\int_C ({\color{green}udy}+{\color{purple}vdx}) \\
+\\
+&=\int_a^b \left({\color{blue}u\frac{dx}{dt}}-{\color{orange}v\frac{dy}{dt}}\right)dt+i\int_a^b \left({\color{green}u\frac{dy}{dt}}+{\color{purple}v\frac{dx}{dt}}\right)dt \\
+\\
+&=\int_a^b f(z(t))\frac{dz(t)}{dt}dt
+\end{align}
+\]
+
+</p>
+<br>
+<h3 style="text-indent: 1em;"></h3>
+<p>
+</p>
+
+<h3 style="text-indent: 1em;"></h3>
+<p>
+</p>
+
+<h3 style="text-indent: 1em;"></h3>
+<p>
+</p>
+
+<h3 style="text-indent: 1em;"></h3>
+<p>
+</p>
+
+    </body>
+</html>

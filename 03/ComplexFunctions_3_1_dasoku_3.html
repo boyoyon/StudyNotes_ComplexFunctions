@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <meta charset="utf-8" />
+        <title>複素関数</title>
+        <style type="text/css">
+            p
+            {
+                padding-left: 2em;
+            }
+            .margin-large
+            {
+                margin-left: 30px;
+            }
+            .margin-large-blue
+            {
+                margin-left: 30px;
+                color: blue;
+            }
+           .margin-abstract {
+               margin-left: 60px; /* 左マージンを広くする */
+               margin-right: 60px; /* 右マージンを広くする */
+           }
+        </style>
+    <style>
+        .two-columns {
+            display: flex;
+            flex-direction: row;
+            gap: 20px; /* 列間のスペース */
+        }
+        .column {
+            flex: 1; /* 各列が均等に幅を取る */
+        }
+    </style>
+<style>
+.three-columns {
+  display: flex;
+  gap: 10px; /* 列間の余白を設定 */
+}
+.column {
+  flex: 1; /* 各列の幅を均等にする */
+  padding: 10px; /* 内側の余白を設定 */
+}
+</style>
+    <style>
+        .styleRef { 
+            text-indent: -40px; /* 最初の行の字下げを逆方向に */
+            margin-left: 10px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 40px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+        .styleBullet { 
+            text-indent: -20px; /* 最初の行の字下げを逆方向に */
+            margin-left: 30px; /* 2行目以降の字下げを調整 */
+            ul {
+                  list-style-type: none; /* 箇条書き記号を非表示 */
+                  padding-left: 0px; /* 全体の左余白 */
+            }
+            li {
+            }
+        }
+    </style>
+    <style>
+            ol
+            {
+                margin-left: 30px;
+            }
+            ul
+            {
+                margin-left: 30px;
+            }
+    </style>
+    <style>
+        .thin-line {
+            margin: 0; 
+            margin-left:2em;
+            border: 0;
+            height: 1px;
+            background-color: gray;
+        }
+
+        .thick-line {
+            margin: 0; 
+            margin-left:2em;
+            border: 0;
+            height: 2px;
+            background-color: black;
+        }
+    </style>
+    <style>
+        .blue {
+            color: blue; /* 好きな色に変更してください */
+        }
+    </style>
+  <style>
+    .boxed-paragraph {
+      margin-left: 30px;       /* 左側のマージン */
+      padding: 10px;           /* 枠の内側の余白 */
+      border: 2px solid #333;  /* 枠のスタイル */
+      background-color: #ffffff; /* 背景色（任意） */
+    }
+  </style>
+    </head>
+    <body>
+        <h1><center>3. 積分法</center></h1>
+
+<h2>3.1 線積分</h2>
+
+<p>
+\(|Δ|=\max\limits_{1≦k≦n}|t_k-t_{k-1}|\) とし, \(|Δ|→0\) と分割を細かくすると右辺の4つの和は \(τ_k\) のとりかたにかかわらず収束して, その極限値は次の4つの線積分となる。
+
+\[
+\begin{align}
+&{\color{blue}\int_C u(x,y)dx = \int_a^b u(x(t),y(t))\frac{dx}{dt}dt} \\
+\\
+&{\color{orange}\int_C v(x,y)dy = \int_a^b v(x(t),y(t))\frac{dy}{dt}dt} \\
+\\
+&{\color{green}\int_C u(x,y)dy = \int_a^b u(x(t),y(t))\frac{dy}{dt}dt} \\
+\\
+&{\color{purple}\int_C v(x,y)dx = \int_a^b v(x(t),y(t))\frac{dx}{dt}dt} 
+\end{align}
+\]
+
+(蛇足)<br>
+<br>
+　・分割の大きさ \(|Δ|→0\) により \(\sum → \int\) になる。<br>
+<br>
+　・積分される関数は,<br>
+　　　複素関数値(複素数)×分割(複素数)<br>
+　　　＝(複素関数の実部＋\(i\) 複素関数の虚部)×(分割の実部＋\(i\) 分割の虚部)<br>
+　　　＝(<span style="color:blue;">複素関数の<strong>実部</strong>×分割の<strong>実部</strong></span>－<span style="color:orange;">複素関数の<strong>虚部</strong>×分割の<strong>虚部</strong></span>)<br>
+　　　　\(+i\)(<span style="color:green;">複素関数の<strong>実部</strong>×分割の<strong>虚部</strong></span>＋<span style="color:purple;">複素関数の<strong>虚部</strong>×分割の<strong>実部</strong></span>)<br>
+<br>
+　・\(z\) 平面内の曲線 \(C\) 上の積分は, 曲線パラメータ \(t\) の区間 (\([a,b]\)) の積分で表される。
+</p>
+<center><img src="images/3_1_02.png"></center>
+<p>
+
+(蛇足おわり)<br>
+</p>
+
+    </body>
+</html>
